@@ -267,17 +267,29 @@
   letter-spacing: 0.08em;
 }
 
-.footer-column a {
+.footer-column a,
+.footer-column button {
   display: block;
   color: rgba(255,255,255,0.78);
   margin-bottom: 0.75rem;
   font-size: 0.95rem;
   transition: color 0.25s ease, transform 0.25s ease;
+  text-align: left;
 }
 
-.footer-column a:hover {
+.footer-column button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.footer-column a:hover,
+.footer-column button:hover,
+.footer-column button:focus {
   color: #f2c94c;
   transform: translateX(4px);
+  outline: none;
 }
 
 .footer-social {

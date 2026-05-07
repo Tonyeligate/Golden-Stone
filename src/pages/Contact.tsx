@@ -166,9 +166,9 @@ export default function Contact() {
             <div className="ct-social">
               <p className="ct-info-label">Follow us</p>
               <div className="ct-social-links">
-                <a href="#" className="ct-social-btn">Facbook</a>
-                <a href="#" className="ct-social-btn">Instagram</a>
-                <a href="#" className="ct-social-btn">Tiktok</a>
+                <a href="https://www.facebook.com/goldenstone.logistic?mibextid=rS40aB7S9Ucbxw6v" className="ct-social-btn" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.instagram.com/goldenstone_logisticsgh?igsh=MXgzbWRkeTV6djhxaw==" className="ct-social-btn" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.tiktok.com/@golden.stone.logistics?_r=1&_t=ZS-967kaHxUbrA" className="ct-social-btn" target="_blank" rel="noopener noreferrer">Tiktok</a>
               </div>
             </div>
 

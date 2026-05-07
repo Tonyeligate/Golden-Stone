@@ -54,12 +54,12 @@ function App() {
 
   const renderPage = () => {
     switch (activePage) {
-      case 'services': return <Services />
+      case 'services': return <Services onNavigate={handleNavigate} />
       case 'about': return <About />
       case 'coverage': return <Coverage />
       case 'contact': return <Contact />
       case 'news': return <News />
-      default: return <Home />
+      default: return <Home onNavigate={handleNavigate} />
     }
   }
 
@@ -83,7 +83,20 @@ function App() {
             </div>
           </button>
 
-          {/* site-nav moved outside header to avoid iOS Safari fixed/transform issues */}
+          <nav className={`site-nav ${menuOpen ? 'open' : ''}`}>
+            <ul>
+              {pages.map((page) => (
+                <li key={page.key}>
+                  <button
+                    className={activePage === page.key ? 'active' : ''}
+                    onClick={() => handleNavigate(page.key)}
+                  >
+                    {page.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
           <div className="header-actions">
             <button className="btn btn-gold" onClick={() => handleNavigate('contact')}>
@@ -93,6 +106,7 @@ function App() {
               className={`menu-toggle ${menuOpen ? 'open' : ''}`}
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label="Toggle menu"
+              aria-expanded={menuOpen}
             >
               <span />
               <span />
@@ -102,21 +116,7 @@ function App() {
         </div>
       </header>
 
-      {/* Nav placed outside header to avoid iOS Safari fixed/transform issues */}
-      <nav className={`site-nav ${menuOpen ? 'open' : ''}`} aria-hidden={!menuOpen}>
-        <ul>
-          {pages.map((page) => (
-            <li key={page.key}>
-              <button
-                className={activePage === page.key ? 'active' : ''}
-                onClick={() => handleNavigate(page.key)}
-              >
-                {page.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      
 
       <main className="site-main">
         {renderPage()}
@@ -148,33 +148,33 @@ function App() {
           <div className="footer-columns">
             <div className="footer-column">
               <h4>Company</h4>
-              <a href="#">About Us</a>
-              <a href="#">Our Team</a>
-              <a href="#">Careers</a>
-              <a href="#">Terms & Conditions</a>
+              <button type="button" onClick={() => handleNavigate('about')}>About Us</button>
+              <button type="button">Our Team</button>
+              <button type="button">Careers</button>
+              <button type="button">Terms & Conditions</button>
             </div>
 
             <div className="footer-column">
               <h4>Services</h4>
-              <a href="#">Express Freight</a>
-              <a href="#">Air Cargo</a>
-              <a href="#">Sea Freight</a>
-              <a href="#">Warehousing</a>
+              <button type="button" onClick={() => handleNavigate('services')}>Express Freight</button>
+              <button type="button" onClick={() => handleNavigate('services')}>Air Cargo</button>
+              <button type="button" onClick={() => handleNavigate('services')}>Sea Freight</button>
+              <button type="button" onClick={() => handleNavigate('services')}>Warehousing</button>
             </div>
 
             <div className="footer-column">
               <h4>Support</h4>
-              <a href="#">Contact Us</a>
-              <a href="#">Coverage</a>
-              <a href="#">FAQs</a>
-              <a href="#">Privacy Policy</a>
+              <button type="button" onClick={() => handleNavigate('contact')}>Contact Us</button>
+              <button type="button" onClick={() => handleNavigate('coverage')}>Coverage</button>
+              <button type="button">FAQs</button>
+              <button type="button">Privacy Policy</button>
             </div>
           </div>
         </div>
 
         <div className="container footer-social">
           <a
-            href="Https://wa.me/+233502609222"
+            href="https://wa.me/+233502609222"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
@@ -196,7 +196,7 @@ function App() {
           </a>
 
           <a
-            href="Email: goldenstoneloistics@gmail.com"
+            href="mailto:goldenstoneloistics@gmail.com"
             aria-label="Email"
             title="Email"
             data-label="Email"
@@ -206,6 +206,8 @@ function App() {
 
           <a
             href="https://maps.apple/p/yBcdbtggvruhq6"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Location"
             title="Location"
             data-label="Location"

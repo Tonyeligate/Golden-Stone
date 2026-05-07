@@ -54,7 +54,7 @@ const highlights = [
   { value: '50M+', label: 'Packages delivered' },
 ]
 
-export default function Services() {
+export default function Services({ onNavigate }: { onNavigate?: (page: 'home' | 'services' | 'about' | 'coverage' | 'contact' | 'news') => void }) {
   return (
     <div className="sv-page">
 
@@ -99,9 +99,9 @@ export default function Services() {
                     </div>
                     <h3>{svc.title}</h3>
                     <p>{svc.description}</p>
-                    <a href="#" className={`sv-link sv-link--${svc.accentClass}`}>
+                    <button type="button" className={`sv-link sv-link--${svc.accentClass}`} onClick={() => onNavigate?.('services')}>
                       Learn more →
-                    </a>
+                    </button>
                   </div>
                 </div>
               )
@@ -113,14 +113,14 @@ export default function Services() {
       {/* ── FEATURE STRIP ── */}
       <section className="sv-strip">
         <div className="container sv-strip-inner">
-          <div className="sv-strip-text slide-in-left">
+            <div className="sv-strip-text slide-in-left">
             <span className="sv-pill sv-pill--light">Why Golden Stone Logistics Limited Company</span>
             <h2>Every shipment.<br /><em>Every border.</em></h2>
             <p>
               From a single parcel to enterprise freight, we combine regional expertise with
               global infrastructure to deliver on time, every time.
             </p>
-            <a href="/contact" className="sv-cta">Get a Quote →</a>
+            <button type="button" className="sv-cta" onClick={() => onNavigate?.('contact')}>Get a Quote →</button>
           </div>
           <div className="sv-strip-img slide-in-right">
             <img

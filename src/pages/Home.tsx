@@ -8,7 +8,7 @@ import cycleImage from '../images/cycle.jpg'
 import secondImage from '../images/second.jpg'
 import mapImage from '../images/map.jpg'
 
-export default function Home() {
+export default function Home({ onNavigate }: { onNavigate?: (page: 'home' | 'services' | 'about' | 'coverage' | 'contact' | 'news') => void }) {
   const heroSlides = [frontImage, firstImage, cycleImage, secondImage]
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -51,8 +51,8 @@ export default function Home() {
               Our premium logistics services are built for brands that demand confidence.
             </p>
             <div className="hero-actions">
-              <button className="btn btn-gold">Get a Quote</button>
-              <button className="btn btn-outline">Our Services</button>
+              <button className="btn btn-gold" type="button" onClick={() => onNavigate?.('contact')}>Get a Quote</button>
+              <button className="btn btn-outline" type="button" onClick={() => onNavigate?.('services')}>Our Services</button>
             </div>
           </div>
           <div className="hero-visual">
@@ -97,7 +97,7 @@ export default function Home() {
           <ul className="rate-features">
             {plan.features.map((f) => <li key={f}><span className="rate-check">✓</span>{f}</li>)}
           </ul>
-          <a className="rate-btn" href="/contact">Ship Now</a>
+          <button type="button" className="rate-btn" onClick={() => onNavigate?.('contact')}>Ship Now</button>
         </div>
       ))}
     </div>
@@ -151,18 +151,18 @@ export default function Home() {
           { icon: '💳', name: 'Documentation Services',   sub: 'Shipping and clearence paperwork' },
           { icon: '🛒', name: 'eCommerce / eServices',sub: 'Fulfillment, last-mile, and returns management' },
         ].map((s) => (
-          <a className="svc-item" href="#" key={s.name}>
+          <button className="svc-item" type="button" onClick={() => onNavigate?.('services')} key={s.name}>
             <div className="svc-item-icon">{s.icon}</div>
             <div className="svc-item-body">
               <span className="svc-item-name">{s.name}</span>
               <span className="svc-item-sub">{s.sub}</span>
             </div>
             <span className="svc-item-arrow">→</span>
-          </a>
+          </button>
         ))}
       </div>
 
-      <a className="svc-cta" href="#">Explore all services <span className="svc-cta-arrow">→</span></a>
+      <button className="svc-cta" type="button" onClick={() => onNavigate?.('services')}>Explore all services <span className="svc-cta-arrow">→</span></button>
     </div>
 
   </div>
@@ -227,10 +227,9 @@ export default function Home() {
       </p>
 
       
-      <a className="btn btn-primary"
-        href="create.html">
+      <button className="btn btn-primary" type="button" onClick={() => onNavigate?.('contact')}>
         Get Started Today
-      </a>
+      </button>
 
       <span className="cta-small-text">No hidden fees. Fast onboarding.</span>
     </div>
@@ -254,9 +253,9 @@ export default function Home() {
         find the best route.
       </p>
 
-      <button className="btn-primary">
+      <a className="btn-primary" href="https://maps.apple/p/yBcdbtggvruhq6" target="_blank" rel="noopener noreferrer">
         Find Location →
-      </button>
+      </a>
     </div>
 
     {/* RIGHT IMAGE CARD */}
