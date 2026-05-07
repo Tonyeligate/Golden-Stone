@@ -83,20 +83,7 @@ function App() {
             </div>
           </button>
 
-          <nav className={`site-nav ${menuOpen ? 'open' : ''}`}>
-            <ul>
-              {pages.map((page) => (
-                <li key={page.key}>
-                  <button
-                    className={activePage === page.key ? 'active' : ''}
-                    onClick={() => handleNavigate(page.key)}
-                  >
-                    {page.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {/* site-nav moved outside header to avoid iOS Safari fixed/transform issues */}
 
           <div className="header-actions">
             <button className="btn btn-gold" onClick={() => handleNavigate('contact')}>
@@ -114,6 +101,22 @@ function App() {
           </div>
         </div>
       </header>
+
+      {/* Nav placed outside header to avoid iOS Safari fixed/transform issues */}
+      <nav className={`site-nav ${menuOpen ? 'open' : ''}`} aria-hidden={!menuOpen}>
+        <ul>
+          {pages.map((page) => (
+            <li key={page.key}>
+              <button
+                className={activePage === page.key ? 'active' : ''}
+                onClick={() => handleNavigate(page.key)}
+              >
+                {page.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       <main className="site-main">
         {renderPage()}
