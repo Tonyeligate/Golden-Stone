@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Sora:wght@300;400;500;600&display=swap');
+
+.contact-page {
+  font-family: 'Sora', sans-serif;
+  background: #f5f7fa;
+  color: #111;
+}
+
+/* ── HERO ── */
+.ct-hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.ct-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80');
+  background-size: cover;
+  background-position: center 35%;
+  animation: ctZoom 16s ease-out forwards;
+}
+
+@keyframes ctZoom {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.00); }
+}
+
+.ct-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 14, 35, 0.96) 0%,
+    rgba(6, 14, 35, 0.55) 55%,
+    rgba(6, 14, 35, 0.15) 100%
+  );
+}
+
+.ct-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 5rem;
+  animation: ctFadeUp 0.85s ease both;
+}
+
+@keyframes ctFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ct-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #e07b2e;
+  border: 1px solid rgba(224,123,46,0.4);
+  padding: 0.28rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.ct-hero-content h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.05;
+  margin: 0 0 1.25rem;
+}
+
+.ct-hero-content h1 em {
+  font-style: italic;
+  color: #e07b2e;
+}
+
+.ct-hero-content p {
+  color: rgba(255,255,255,0.65);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 460px;
+}
+
+/* ── SHARED ── */
+.ct-pill {
+  display: inline-block;
+  background: rgba(224,123,46,0.12);
+  color: #e07b2e;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.28rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+/* ── CONTACT SECTION ── */
+.ct-section {
+  padding: 5rem 0;
+}
+
+.ct-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* FORM CARD */
+.ct-form-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2.75rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+}
+
+.ct-form-header {
+  margin-bottom: 2rem;
+}
+
+.ct-form-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #060e23;
+  line-height: 1.2;
+  margin: 0.4rem 0 0;
+}
+
+.ct-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ct-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.ct-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.ct-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #445;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ct-field input,
+.ct-field textarea {
+  background: #f7f9fc;
+  border: 1.5px solid #e4e9f2;
+  border-radius: 12px;
+  padding: 0.875rem 1rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+  color: #111;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ct-field input:focus,
+.ct-field textarea:focus {
+  outline: none;
+  border-color: #e07b2e;
+  box-shadow: 0 0 0 3px rgba(224,123,46,0.12);
+}
+
+.ct-field input::placeholder,
+.ct-field textarea::placeholder {
+  color: #aab;
+}
+
+.ct-submit {
+  background: #060e23;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  align-self: flex-start;
+}
+
+.ct-submit:hover {
+  background: #e07b2e;
+  transform: translateY(-2px);
+}
+
+.ct-success {
+  font-size: 0.88rem;
+  color: #2a9d60;
+  font-weight: 500;
+  margin: 0;
+  animation: ctFadeUp 0.3s ease;
+}
+
+/* INFO PANEL */
+.ct-info-panel {
+  background: #060e23;
+  border-radius: 24px;
+  padding: 2.5rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ct-info-top h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0.4rem 0 0;
+  line-height: 1.2;
+}
+
+.ct-info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ct-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.ct-info-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.ct-info-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 0.2rem;
+}
+
+.ct-info-value {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+}
+
+.ct-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.ct-social-btn {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.75);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.ct-social-btn:hover {
+  background: #e07b2e;
+  border-color: #e07b2e;
+  color: #fff;
+}
+
+.ct-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+}
+
+.ct-badge span { font-size: 1.2rem; }
+.ct-badge p { margin: 0; }
+
+/* ── FAQ ── */
+.ct-faq {
+  background: #fff;
+  padding: 5rem 0 6rem;
+}
+
+.ct-faq-header {
+  max-width: 520px;
+  margin-bottom: 3.5rem;
+}
+
+.ct-faq-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  color: #060e23;
+  line-height: 1.15;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.ct-faq-header p {
+  color: #778;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.ct-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid #eaecf2;
+}
+
+.ct-faq-item {
+  border-bottom: 1px solid #eaecf2;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.ct-faq-item:hover {
+  background: #fafbfd;
+}
+
+.ct-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  gap: 1rem;
+}
+
+.ct-faq-q span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #060e23;
+  line-height: 1.45;
+}
+
+.ct-faq-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f0f2f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #e07b2e;
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.ct-faq-item.open .ct-faq-icon {
+  background: #e07b2e;
+  color: #fff;
+}
+
+.ct-faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.ct-faq-item.open .ct-faq-a {
+  max-height: 300px;
+  padding-bottom: 1.5rem;
+}
+
+.ct-faq-a p {
+  color: #556;
+  font-size: 0.925rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .ct-layout {
+    grid-template-columns: 1fr;
+  }
+  .ct-field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ct-hero { min-height: 100svh; }
+  .ct-form-card { padding: 1.75rem; }
+  .ct-info-panel { padding: 1.75rem; }
+
+  /* Mobile stability improvements */
+  .ct-hero-content {
+    padding: 2rem 1rem;
+  }
+
+  .ct-hero h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .ct-form {
+    gap: 1rem;
+  }
+
+  .ct-form-group {
+    margin-bottom: 0;
+  }
+
+  .ct-submit-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .ct-faq-item {
+    padding: 1rem;
+  }
+}
