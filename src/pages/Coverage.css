@@ -327,13 +327,15 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.75;
-  transition: opacity 0.3s ease;
+  /* show original logo colors (remove forced inversion) */
+  filter: none;
+  opacity: 0.95;
+  transition: opacity 0.3s ease, transform 0.25s ease;
 }
 
 .partner-card:hover img {
   opacity: 1;
+  transform: scale(1.04);
 }
 
 @keyframes scrollTicker {
