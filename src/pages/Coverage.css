@@ -302,22 +302,43 @@
   animation-play-state: paused;
 }
 
-.partner-badge {
+/* ── PARTNER IMAGE CARDS ── */
+.partner-card {
   background: rgba(255,255,255,0.07);
   border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.85);
-  padding: 0.7rem 2rem;
-  border-radius: 999px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  white-space: nowrap;
+  border-radius: 12px;
+  padding: 1rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  height: 80px;
   transition: all 0.3s ease;
 }
 
-.partner-badge:hover {
+.partner-card:hover {
   background: rgba(224,123,46,0.2);
   border-color: #e07b2e;
-  color: #fff;
+}
+
+.partner-card img {
+  max-width: 120px;
+  max-height: 48px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.partner-card:hover img {
+  opacity: 1;
+}
+
+@keyframes scrollTicker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Animation */

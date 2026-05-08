@@ -3,6 +3,10 @@ import scheduleImage from '../images/schedule.jpg'
 import pickupImage from '../images/pickup.jpeg'
 import monitorImage from '../images/monitor.jpg'
 import safeImage from '../images/safe.jpg'
+import oneLogo from '../images/one.jpeg'
+import upsLogo from '../images/ups.jpeg'
+import lineLogo from '../images/line.jpg'
+import googleLogo from '../images/google.jpg'
 import { 
   HiOutlineLocationMarker, 
   HiOutlineTruck, 
@@ -54,7 +58,12 @@ const steps = [
   }
 ];
 
-const partners = ['DHL Express', 'FedEx Intl.', 'Maersk Line', 'Ethiopian Air']
+const partners = [
+  { name: 'Ocean Network Express', img: oneLogo },
+  { name: 'UPS',                   img: upsLogo },
+  { name: 'Maersk Line',           img: lineLogo },
+  { name: 'Ethiopian Air',         img: googleLogo },
+]
 
 export default function Coverage() {
   return (
@@ -102,7 +111,7 @@ export default function Coverage() {
 </section>
 
       {/* ── PARTNERS ── */}
-     <section className="cov-partners">
+   <section className="cov-partners">
   <div className="container slide-in-right">
     <p className="cov-partners-label">
       Global alliances that extend our reach
@@ -111,8 +120,8 @@ export default function Coverage() {
     <div className="ticker">
       <div className="ticker-track">
         {[...partners, ...partners].map((p, index) => (
-          <div key={index} className="partner-badge">
-            {p}
+          <div key={index} className="partner-card">
+            <img src={p.img} alt={p.name} />
           </div>
         ))}
       </div>

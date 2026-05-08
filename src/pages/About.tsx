@@ -21,7 +21,7 @@ const testimonials = [
 
 const stats = [
   { value: '5M+', label: 'Customers Worldwide' },
-  { value: '190+', label: 'Countries Served' },
+  { value: '2+', label: 'Countries Served' },
   { value: '50M+', label: 'Packages Delivered' },
   { value: '98%', label: 'On-Time Delivery' },
 ]
@@ -117,7 +117,7 @@ export default function About() {
         <div className="container ab-story-grid">
           <div className="ab-story-left slide-in-left">
             <span className="ab-pill">Our Story</span>
-            <h2>Delivering excellence<br /><em>since 2024.</em></h2>
+            <h2>Year Of Estalishment<br /><em>since October 2023.</em></h2>
             <p>
               Golden Stone Logistics Limited Company was founded with a single mission: to revolutionize
               freight acrossfrom China to Ghana and beyond. What began as a lean courier operation
@@ -144,7 +144,7 @@ export default function About() {
               />
               <div className="ab-img-badge">
                 <strong>Est.</strong>
-                <span>2024</span>
+                <span>2023</span>
               </div>
             </div>
 
