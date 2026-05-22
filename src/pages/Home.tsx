@@ -3,10 +3,11 @@ import './Home.css'
 import deliveryImage from '../images/less.jpeg'
 import serviceImage from '../images/front.jpeg'
 import frontImage from '../images/front.jpeg'
-import firstImage from '../images/first.jpg'
-import cycleImage from '../images/cycle.jpg'
-import secondImage from '../images/second.jpg'
+import firstImage from '../images/first.jpeg'
+import cycleImage from '../images/cycle.jpeg'
+import secondImage from '../images/second.jpeg'
 import mapImage from '../images/map.jpg'
+import headerLogo from '../images/header.png'
 
 export default function Home({ onNavigate }: { onNavigate?: (page: 'home' | 'services' | 'about' | 'coverage' | 'contact' | 'news') => void }) {
   const heroSlides = [frontImage, firstImage, cycleImage, secondImage]
@@ -56,13 +57,7 @@ export default function Home({ onNavigate }: { onNavigate?: (page: 'home' | 'ser
             </div>
           </div>
           <div className="hero-visual">
-            <div className="logo">
-              <div className="logo-top">GSL</div>
-              <div className="logo-bottom">
-                GOLDEN STONE LOGISTICS<br />
-                LIMITED COMPANY
-              </div>
-            </div>
+            <img src={headerLogo} alt="Golden Stone Logistics logo" className="hero-logo" />
           </div>
         </div>
       </section>
@@ -171,36 +166,36 @@ export default function Home({ onNavigate }: { onNavigate?: (page: 'home' | 'ser
 <section className="why-choose">
   <div className="container">
     <div className="why-header">
-      <p className="eyebrow dark">Why choose Golden Stone Logistics Limited Company</p>
-      <h2>Luxury service built around your operation.</h2>
+      <p className="eyebrow dark">Why Golden Stone Logistics</p>
+      <h2>Precision logistics. Premium experience.</h2>
     </div>
 
     <div className="reason-grid">
-      <div className="reason-card card-1 slide-in-left">
+      <div className="reason-card card-1 fade-up">
         <div className="overlay">
-          <h3>Fast Delivery</h3>
-          <p>Speed and consistency delivered with premium quality.</p>
+          <h3>Swift Delivery</h3>
+          <p>Time-sensitive shipments handled with speed, accuracy, and zero compromise.</p>
         </div>
       </div>
 
-      <div className="reason-card card-2 slide-in-right">
+      <div className="reason-card card-2 fade-up delay-1">
         <div className="overlay">
-          <h3>Secure Handling</h3>
-          <p>Your critical freight receives elite attention every step.</p>
+          <h3>Elite Cargo Handling</h3>
+          <p>Every item treated with the care and precision your freight deserves.</p>
         </div>
       </div>
 
-      <div className="reason-card card-3 slide-in-left">
+      <div className="reason-card card-3 fade-up delay-2">
         <div className="overlay">
-          <h3>Nationwide Coverage</h3>
-          <p>Strategic reach across key regions and major metro hubs.</p>
+          <h3>Nationwide Reach</h3>
+          <p>Seamless coverage across key regions, corridors, and major metro hubs.</p>
         </div>
       </div>
 
-      <div className="reason-card card-4 slide-in-right">
+      <div className="reason-card card-4 fade-up delay-3">
         <div className="overlay">
-          <h3>24/7 Support</h3>
-          <p>Dedicated support access for premium customers anytime.</p>
+          <h3>Always-On Support</h3>
+          <p>Round-the-clock assistance so your operations never miss a beat.</p>
         </div>
       </div>
     </div>

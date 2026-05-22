@@ -1,5 +1,6 @@
 import './Services.css'
 import expressImage from '../images/express.jpg'
+import goodsVideo from '../images/goods .mp4'
 import { FaTruck, FaPlane, FaShip, FaWarehouse, FaBoxes, FaBuilding } from 'react-icons/fa'
 
 const serviceItems = [
@@ -123,10 +124,17 @@ export default function Services({ onNavigate }: { onNavigate?: (page: 'home' | 
             <button type="button" className="sv-cta" onClick={() => onNavigate?.('contact')}>Get a Quote →</button>
           </div>
           <div className="sv-strip-img slide-in-right">
-            <img
-              src={expressImage}
-              alt="Logistics operations"
-            />
+            <video
+              className="sv-strip-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={expressImage}
+            >
+              <source src={goodsVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             <div className="sv-strip-badge">
               <span>🏆</span>
               <p>Top Logistics Provider<br /><strong>West Africa 2026</strong></p>

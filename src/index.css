@@ -165,14 +165,8 @@ a {
     -webkit-tap-highlight-color: transparent;
   }
 
-  html {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-  }
 
   body {
-    -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
   }
 

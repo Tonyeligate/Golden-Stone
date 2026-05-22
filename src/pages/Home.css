@@ -5,15 +5,21 @@
 .hero-panel {
   position: relative;
   overflow: hidden;
-  padding: 10rem 0 7rem;
-  background: linear-gradient(180deg, rgba(201,162,39,0.08) 0%, rgba(255,255,255,0.9) 35%, var(--white) 100%);
+  min-height: 90vh;
+  padding: 15rem 0 11rem;
+  background: linear-gradient(180deg, rgba(201,162,39,0.08) 0%, rgba(232, 207, 98, 0.9) 35%, var(--white) 100%);
 }
 
 .hero-panel::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(201,162,39,0.15), rgba(255,255,255,0.85) 35%, rgba(255, 255, 255, 0.673) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(6, 14, 35, 0.96) 0%,
+    rgba(6, 14, 35, 0.55) 55%,
+    rgba(6, 14, 35, 0.15) 100%
+  );
   z-index: 0;
 }
 
@@ -70,7 +76,7 @@
 }
 
 .hero-copy h1 {
-  color: #111;
+  color: #fffcfc;
 }
 
 .hero-text {
@@ -90,6 +96,7 @@
 
 .hero-copy h1 {
   font-size: clamp(2.8rem, 4vw, 4.5rem);
+   font-family: 'Cormorant Garamond', serif;
   line-height: 0.98;
   margin: 0 0 1.5rem;
 }
@@ -111,6 +118,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hero-logo {
+  width: auto;
+  max-height: 20rem;
+  object-fit: contain;
+  display: block;
 }
 
 .logo {
@@ -556,73 +570,118 @@
   background-size: cover;
   background-position: center;
 }
-
 .why-choose {
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
 .why-choose .why-header {
-  max-width: 760px;
-  margin-bottom: 2rem;
+  max-width: 680px;
+  margin-bottom: 3rem;
 }
 
 .why-choose .why-header h2 {
-  margin: 0.75rem 0 0;
-}
-
-.why-choose .reason-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .eyebrow.dark {
   color: var(--dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-/* Dark overlay for readability */
+/* Grid */
+.why-choose .reason-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* Cards */
+.reason-card {
+  position: relative;
+  min-height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Overlay gradient — cleaner, more minimal */
 .reason-card::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.7),
-    rgba(0,0,0,0.2)
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.08) 60%,
+    transparent 100%
+  );
+  transition: background 0.4s ease;
+}
+
+.reason-card:hover::before {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.15) 65%,
+    transparent 100%
   );
 }
 
-/* Content sits above overlay */
+/* Content */
 .reason-card .overlay {
   position: relative;
-  padding: 1.5rem;
+  padding: 1.75rem;
   z-index: 1;
 }
 
 .reason-card h3 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #fff;
 }
 
 .reason-card p {
-  color: rgba(255,255,255,0.85);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
 }
 
-.card-1 {
-  background-image: url('../images/delivery.jpeg');
-}
+/* Background images */
+.card-1 { background-image: url('../images/delivery.jpeg'); }
+.card-2 { background-image: url('../images/handling.jpeg'); }
+.card-3 { background-image: url('../images/nation.jpg'); }
+.card-4 { background-image: url('../images/support.jpeg'); }
 
-.card-2 {
-  background-image: url('../images/handling.jpeg');
-}
 
-.card-3 {
-  background-image: url('../images/nation.jpg');
-}
 
-.card-4 {
-  background-image: url('../images/support.jpeg');
-}
+/* Responsive */
+@media (max-width: 640px) {
+  .why-choose .reason-grid {
+    grid-template-columns: 1fr;
+  }
 
+  .reason-card {
+    min-height: 260px;
+  }
+}
 .cta-modern {
   padding: 100px 20px;
   background: #b7bb6334;
@@ -845,7 +904,8 @@
 
 @media (max-width: 760px) {
   .hero-panel {
-    padding: 4.5rem 1rem 3rem;
+    min-height: 70vh;
+    padding: 6rem 1rem 4rem;
   }
 
   .hero-copy h1 {

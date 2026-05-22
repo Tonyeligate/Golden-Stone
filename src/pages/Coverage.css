@@ -379,6 +379,22 @@
   transition: transform 0.4s ease;
 }
 
+.process-step.step-01 {
+  background-image: url('../images/schedule.jpg');
+}
+
+.process-step.step-02 {
+  background-image: url('../images/pickup.jpeg');
+}
+
+.process-step.step-03 {
+  background-image: url('../images/monitor.jpg');
+}
+
+.process-step.step-04 {
+  background-image: url('../images/safe.jpg');
+}
+
 /* Hover lift */
 .process-step:hover {
   transform: translateY(-8px);

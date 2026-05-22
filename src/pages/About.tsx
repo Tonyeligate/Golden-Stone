@@ -1,4 +1,5 @@
 ﻿import { useState, useEffect } from 'react'
+import headerLogo from '../images/header.png'
 import './About.css'
 
 const milestones = [
@@ -138,8 +139,8 @@ export default function About() {
           <div className="ab-story-right slide-in-right">
             <div className="ab-img-stack">
               <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
-                alt="Logistics operations"
+                src={headerLogo}
+                alt="Golden Stone header logo"
                 className="ab-img-main"
               />
               <div className="ab-img-badge">

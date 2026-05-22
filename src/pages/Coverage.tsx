@@ -141,8 +141,7 @@ export default function Coverage() {
       {steps.map((s) => (
         <div
           key={s.num}
-          className="process-step"
-          style={{ backgroundImage: `url(${s.image})` }}
+          className={`process-step step-${s.num}`}
         >
           <div className="process-overlay" />
 

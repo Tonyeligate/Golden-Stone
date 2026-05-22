@@ -1,10 +1,18 @@
 import { useEffect, useState } from 'react'
+import type { PageKey as AppPageKey } from './types'
 import Home from './pages/Home.tsx'
 import Services from './pages/Services.tsx'
 import About from './pages/About.tsx'
 import Coverage from './pages/Coverage.tsx'
 import Contact from './pages/Contact.tsx'
 import News from './pages/News.tsx'
+import NewsArticle1 from './pages/NewsArticle1.tsx'
+import NewsArticle2 from './pages/NewsArticle2.tsx'
+import NewsArticle3 from './pages/NewsArticle3.tsx'
+import NewsArticle4 from './pages/NewsArticle4.tsx'
+import NewsArticle5 from './pages/NewsArticle5.tsx'
+import NewsArticle6 from './pages/NewsArticle6.tsx'
+import headerLogo from './images/header.png'
 import './App.css'
 import { 
   FaWhatsapp, 
@@ -24,10 +32,8 @@ const pages = [
   { key: 'news', label: 'News' },
 ] as const
 
-type PageKey = (typeof pages)[number]['key']
-
 function App() {
-  const [activePage, setActivePage] = useState<PageKey>('home')
+  const [activePage, setActivePage] = useState<AppPageKey>('home')
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -58,12 +64,18 @@ function App() {
       case 'about': return <About />
       case 'coverage': return <Coverage />
       case 'contact': return <Contact />
-      case 'news': return <News />
+      case 'news': return <News onNavigate={handleNavigate} />
+      case 'news-article-1': return <NewsArticle1 onNavigate={handleNavigate} />
+      case 'news-article-2': return <NewsArticle2 onNavigate={handleNavigate} />
+      case 'news-article-3': return <NewsArticle3 onNavigate={handleNavigate} />
+      case 'news-article-4': return <NewsArticle4 onNavigate={handleNavigate} />
+      case 'news-article-5': return <NewsArticle5 onNavigate={handleNavigate} />
+      case 'news-article-6': return <NewsArticle6 onNavigate={handleNavigate} />
       default: return <Home onNavigate={handleNavigate} />
     }
   }
 
-  const handleNavigate = (page: PageKey) => {
+  const handleNavigate = (page: AppPageKey) => {
     setActivePage(page)
     setMenuOpen(false)
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -74,13 +86,7 @@ function App() {
       <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="container header-inner">
           <button className="brand" onClick={() => handleNavigate('home')}>
-            <div className="code-logo">
-              <div className="code-logo-top">GSL</div>
-              <div className="code-logo-bottom">
-                GOLDEN STONE LOGISTICS<br />
-                LIMITED COMPANY
-              </div>
-            </div>
+            <img src={headerLogo} alt="Golden Stone Logistics logo" className="site-logo" />
           </button>
 
           <nav className={`site-nav ${menuOpen ? 'open' : ''}`}>
@@ -106,7 +112,6 @@ function App() {
               className={`menu-toggle ${menuOpen ? 'open' : ''}`}
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label="Toggle menu"
-              aria-expanded={menuOpen}
             >
               <span />
               <span />
@@ -127,13 +132,11 @@ function App() {
         <div className="container footer-inner">
           <div className="footer-brand-group">
             <div className="footer-logo">
-              <div className="code-logo footer-code-logo">
-                <div className="code-logo-top">GSL</div>
-                <div className="code-logo-bottom">
-                  GOLDEN STONE LOGISTICS<br />
-                  LIMITED COMPANY
-                </div>
-              </div>
+              <img
+                src={headerLogo}
+                alt="Golden Stone Logistics logo"
+                className="footer-logo-img"
+              />
             </div>
             <p className="footer-description">
               Golden Stone Logistics Limited Company remains the trusted choice for secure, premium and efficient logistics solutions across Ghana and beyond.
