@@ -27,6 +27,29 @@ const stats = [
   { value: '98%', label: 'On-Time Delivery' },
 ]
 
+const awards = [
+  {
+    title: 'Certificate of Incorporation 2023',
+    issuer: 'Registrar of Companies',
+  },
+  {
+    title: 'VAT Registration Certificate 2024',
+    issuer: 'Ghana Revenue Authority (GRA)',
+  },
+  {
+    title: 'Certificate of Membership',
+    issuer: 'Association of Ghana Industries 2025',
+  },
+  {
+    title: 'Most Reliable and Fastest Courier Company in West Africa 2019',
+    issuer: 'Pillars Modern Ghana Awards',
+  },
+  {
+    title: 'Outstanding Contribution to the Shipping Industry 2019',
+    issuer: 'Ghana Shippers Awards',
+  },
+]
+
 function TestimonialsSlider() {
   const [current, setCurrent] = useState(0)
   const total = testimonials.length
@@ -190,6 +213,41 @@ export default function About() {
                 <span>Excellence</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── AWARDS & RECOGNITION ── */}
+      <section className="ab-awards">
+        <div className="container">
+          <div className="ab-awards-header slide-in-left">
+            <div className="ab-awards-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="8" r="6" />
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+            </div>
+            <h2 className="ab-awards-title">Certifications &amp; Compliance</h2>
+            <p className="ab-awards-desc">
+                Built on trust, compliance, and professionalism ,our certifications reflect our dedication to delivering reliable, efficient, and world-class logistics solutions. As a legally recognized and fully compliant company, we uphold the highest standards of operational excellence, transparency, and customer satisfaction in every service we provide.
+            </p>
+          </div>
+
+          <div className="ab-awards-grid">
+            {awards.map((award) => (
+              <div key={award.title} className="ab-award-card slide-in-left">
+                <div className="ab-award-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="8" r="6" />
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                  </svg>
+                </div>
+                <div className="ab-award-text">
+                  <h3 className="ab-award-title">{award.title}</h3>
+                  {award.issuer && <span className="ab-award-issuer">{award.issuer}</span>}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -16,7 +16,7 @@
   z-index: 100;
   padding: 0.5rem 1.2rem;
   transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
-  background: rgba(243, 183, 4, 0.95);
+  background: rgba(242, 241, 238, 0.95);
   border-radius: 0 0 16px 16px;
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
@@ -24,7 +24,7 @@
 }
 
 .site-header.scrolled {
-  background: rgba(246, 181, 2, 0.98);
+  background: rgba(242, 241, 238, 0.95);
   box-shadow: 0 14px 40px rgba(0,0,0,0.08);
 }
 
@@ -218,8 +218,10 @@
 }
 
 .site-footer {
-  background: linear-gradient(180deg, #0f1d46, #101b3f, #1e3a8a);
-  color: #ffffff;
+  background-image:
+    linear-gradient(135deg, rgba(6, 14, 35, 0.405) 0%, rgba(13, 26, 58, 0) 55%, rgba(6, 14, 35, 0.488) 100%),
+    url("../images/footer.jpeg");
+  color: #e73e14;
   padding: 4rem 0 2rem;
   margin-top: 0;
   overflow-x: hidden;
@@ -260,11 +262,11 @@
 .footer-code-logo .code-logo-bottom {
   font-size: 0.75rem;
   letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.92);
+  color: rgba(14, 13, 13, 0.92);
 }
 
 .footer-description {
-  color: rgba(255,255,255,0.82);
+  color: rgba(11, 10, 10, 0.82);
   line-height: 1.9;
   max-width: 420px;
   margin: 0;
@@ -272,7 +274,7 @@
 
 .footer-contact-info p {
   margin: 0.45rem 0;
-  color: rgba(255,255,255,0.78);
+  color: rgba(15, 13, 13, 0.78);
   font-size: 0.95rem;
 }
 
@@ -293,7 +295,7 @@
 .footer-column a,
 .footer-column button {
   display: block;
-  color: rgba(255,255,255,0.78);
+  color: rgba(15, 15, 15, 0.78);
   margin-bottom: 0.75rem;
   font-size: 0.95rem;
   transition: color 0.25s ease, transform 0.25s ease;
@@ -310,7 +312,7 @@
 .footer-column a:hover,
 .footer-column button:hover,
 .footer-column button:focus {
-  color: #f2c94c;
+  color: #f3480a;
   transform: translateX(4px);
   outline: none;
 }
@@ -333,8 +335,8 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(255,255,255,0.08);
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.973);
+  color: #171616;
   font-size: 18px;
   transition: transform 0.25s ease, background-color 0.25s ease;
   border: 1px solid rgba(255,255,255,0.12);
@@ -356,7 +358,7 @@
 .footer-bottom p {
   margin: 0;
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.72);
+  color: rgba(23, 22, 22, 0.986);
 }
 
 /* LOGO */

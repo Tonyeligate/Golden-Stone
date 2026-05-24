@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import type { PageKey } from '../types'
 import growthImage from '../images/growth.jpg'
 import './News.css'
 
@@ -80,13 +81,23 @@ const defaultPosts: Post[] = [
   },
 ]
 
-export default function News() {
+const ARTICLE_PAGE_MAP: Record<string, PageKey> = {
+  'post-1': 'news-article-1',
+  'post-2': 'news-article-2',
+  'post-3': 'news-article-3',
+  'post-4': 'news-article-4',
+  'post-5': 'news-article-5',
+  'post-6': 'news-article-6',
+}
+
+type NewsProps = {
+  onNavigate: (page: PageKey) => void
+}
+
+export default function News({ onNavigate }: NewsProps) {
   const [activeCategory, setActiveCategory] = useState('All')
   const [posts, setPosts] = useState<Post[]>(defaultPosts)
   const [visiblePosts, setVisiblePosts] = useState<Post[]>(defaultPosts)
-  const [activePost, setActivePost] = useState<Post | null>(null)
-  const [aiSummary, setAiSummary] = useState('')
-  const [loadingAI, setLoadingAI] = useState(false)
 
   useEffect(() => {
     const stored = window.localStorage.getItem(LOCAL_STORAGE_KEY)
@@ -114,60 +125,9 @@ export default function News() {
   const featured = posts.find(p => p.featured) ?? posts[0]
   const grid = visiblePosts.filter(p => !p.featured || activeCategory !== 'All')
 
-  function generateFallbackArticle(post: Post) {
-    return `Golden Stone Logistics Limited Company is deepening its role across the logistics sector with a strategic focus on premium service delivery. ${post.excerpt} The initiative builds on the company’s existing strengths in secure cargo handling, fast customs clearance, and regional route optimization.
-
-${post.title} reflects the company’s commitment to smart logistics for businesses and consumers alike. With expanded operational capacity, enhanced tracking, and improved customer service, the company is creating a more dependable logistics experience across the region.`
-  }
-
-  async function openPost(post: Post) {
-    setActivePost(post)
-    if (post.content) {
-      setAiSummary(post.content)
-      setLoadingAI(false)
-      return
-    }
-
-    setAiSummary(generateFallbackArticle(post))
-    setLoadingAI(true)
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          messages: [{
-            role: 'user',
-            content: `You are a logistics industry journalist. Write a compelling, detailed 3-paragraph news article body for this story at Golden Stone Logistics Limited Company in Ghana. Make it sound real, professional and informative. 
-            
-Title: ${post.title}
-Summary: ${post.excerpt}
-Category: ${post.category}
-Date: ${post.date}
-
-Write only the article body paragraphs, no title or byline.`
-          }]
-        })
-      })
-      const data = await res.json()
-      setAiSummary(data.content[0]?.text || generateFallbackArticle(post))
-    } catch {
-      setAiSummary(generateFallbackArticle(post))
-    }
-    setLoadingAI(false)
-  }
-
-  const closeArticle = () => {
-    setActivePost(null)
-    window.requestAnimationFrame(() => {
-      const featuredSection = document.querySelector('.news-featured') as HTMLElement | null
-      if (featuredSection) {
-        featuredSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      }
-    })
+  const openArticle = (post: Post) => {
+    const page = ARTICLE_PAGE_MAP[post.id] ?? 'news'
+    onNavigate(page)
   }
 
   return (
@@ -185,10 +145,9 @@ Write only the article body paragraphs, no title or byline.`
       </section>
 
       {/* ── FEATURED ── */}
-      {!activePost && (
       <section className="news-featured">
         <div className="container">
-          <div className="featured-card slide-in-left" onClick={() => openPost(featured)}>
+          <div className="featured-card slide-in-left" onClick={() => openArticle(featured)}>
             <div className="featured-img-wrap">
               <img src={featured.image} alt={featured.title} />
               <span className="featured-label">Featured</span>
@@ -201,15 +160,13 @@ Write only the article body paragraphs, no title or byline.`
                 <span className="news-date">📅 {featured.date}</span>
                 <span className="news-read">⏱ {featured.readTime}</span>
               </div>
-              <button className="news-read-btn" onClick={() => openPost(featured)}>Read Full Story →</button>
+              <button className="news-read-btn" onClick={(event) => { event.stopPropagation(); openArticle(featured) }}>Read Full Story →</button>
             </div>
           </div>
         </div>
       </section>
-      )}
 
       {/* ── FILTER + GRID ── */}
-      {!activePost && (
       <section className="news-list">
         <div className="container">
           <div className="news-filter-bar slide-in-left">
@@ -235,7 +192,7 @@ Write only the article body paragraphs, no title or byline.`
               <article
                 key={post.id}
                 className={`news-card ${i % 2 === 0 ? 'slide-in-left' : 'slide-in-right'}`}
-                onClick={() => openPost(post)}
+                onClick={() => openArticle(post)}
               >
                 <div className="news-card-img">
                   <img src={post.image} alt={post.title} />
@@ -255,40 +212,6 @@ Write only the article body paragraphs, no title or byline.`
           </div>
         </div>
       </section>
-      )}
-
-      {activePost && (
-        <section className="news-article-page">
-          <div className="container">
-            <button className="news-back-btn" onClick={closeArticle}>← Back to updates</button>
-            <article className="news-article-card slide-in-left">
-              <img src={activePost.image} alt={activePost.title} className="news-article-img" />
-              <div className="news-article-body">
-                <span className="news-cat">{activePost.category}</span>
-                <h1>{activePost.title}</h1>
-                <div className="news-meta news-meta--spaced">
-                  <span className="news-date">📅 {activePost.date}</span>
-                  <span className="news-read">⏱ {activePost.readTime}</span>
-                </div>
-                {loadingAI ? (
-                  <div className="modal-loading">
-                    <div className="loading-dots"><span /><span /><span /></div>
-                    <p>Generating full article…</p>
-                  </div>
-                ) : (
-                  <div className="news-article-copy">
-                    {aiSummary.split('\n\n').map((para, i) => (
-                      <p key={i}>{para}</p>
-                    ))}
-                  </div>
-                )}
-                <button className="sv-cta" type="button" onClick={closeArticle}>Back to updates</button>
-              </div>
-            </article>
-          </div>
-        </section>
-      )}
-
 
     </div>
   )

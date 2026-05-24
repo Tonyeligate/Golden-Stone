@@ -1,6 +1,6 @@
 import './Services.css'
 import expressImage from '../images/express.jpg'
-import goodsVideo from '../images/goods .mp4'
+import handlingImage from '../images/handling.jpeg'
 import { FaTruck, FaPlane, FaShip, FaWarehouse, FaBoxes, FaBuilding } from 'react-icons/fa'
 
 const serviceItems = [
@@ -13,7 +13,7 @@ const serviceItems = [
   },
   {
     title: 'Customs Clearance',
-    description: 'Preparing import/export document. Paying duties and taxes. Ensuring compiliance wiith government regulations ',
+    description: 'Preparing import/export documents, handling duties and taxes, and ensuring compliance with government regulations.',
     icon: FaPlane,
     image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80',
     accentClass: 'orange',
@@ -41,7 +41,7 @@ const serviceItems = [
   },
   {
     title: 'Documentation Services',
-    description: "Bill of loading, Commercial invoice, Packing list, and Shipping and clearance paperwork.",
+    description: "Bill of lading, commercial invoice, packing list, and shipping clearance paperwork.",
     icon: FaBuilding,
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
     accentClass: 'orange',
@@ -57,10 +57,13 @@ const highlights = [
 
 export default function Services({ onNavigate }: { onNavigate?: (page: 'home' | 'services' | 'about' | 'coverage' | 'contact' | 'news') => void }) {
   return (
-    <div className="sv-page">
+    <>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+      <div className="sv-page">
+        
 
-      {/* ── HERO ── */}
-      <section className="sv-hero">
+        {/* ── HERO ── */}
+        <section className="sv-hero">
         <div className="sv-hero-bg" />
         <div className="sv-hero-overlay" />
         <div className="container sv-hero-content slide-in-right">
@@ -124,17 +127,8 @@ export default function Services({ onNavigate }: { onNavigate?: (page: 'home' | 
             <button type="button" className="sv-cta" onClick={() => onNavigate?.('contact')}>Get a Quote →</button>
           </div>
           <div className="sv-strip-img slide-in-right">
-            <video
-              className="sv-strip-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster={expressImage}
-            >
-              <source src={goodsVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+
+            <img src={handlingImage} alt="Cargo handling" className="sv-strip-video" />
             <div className="sv-strip-badge">
               <span>🏆</span>
               <p>Top Logistics Provider<br /><strong>West Africa 2026</strong></p>
@@ -145,23 +139,32 @@ export default function Services({ onNavigate }: { onNavigate?: (page: 'home' | 
 
       {/* ── PROCESS ── */}
       <section className="sv-process">
-        <div className="container">
-          <div className="sv-process-header slide-in-left">
-            <span className="sv-pill">How It Works</span>
-            <h2>Simple. Transparent.<br /><em>Reliable.</em></h2>
+  <div className="container">
+    <div className="sv-process-header slide-in-left">
+      <span className="sv-pill">How It Works</span>
+      <h2>Simple. Transparent.<br /><em>Reliable.</em></h2>
+    </div>
+    <div className="sv-process-steps">
+      {[
+        { icon: 'ti-calendar-plus', title: 'Book your shipment', desc: 'Schedule online or by phone in minutes' },
+        { icon: 'ti-package',       title: 'Collection & labelling', desc: 'We collect and label your cargo securely' },
+        { icon: 'ti-map-pin',       title: 'Live GPS tracking', desc: 'Real-time visibility throughout transit' },
+        { icon: 'ti-circle-check',  title: 'Confirmed delivery', desc: 'Instant notification on successful delivery' },
+      ].map((step, i) => (
+        <div key={i} className={`sv-step ${i % 2 === 0 ? 'slide-in-left' : 'slide-in-right'}`}>
+          <div className="sv-step-icon-wrap">
+            <i className={`ti ${step.icon}`} aria-hidden="true" />
           </div>
-          <div className="sv-process-steps">
-            {['Book your shipment online or by phone', 'We collect and label your cargo', 'Real-time GPS tracking in transit', 'Confirmed delivery with instant notification'].map((step, i) => (
-              <div key={i} className={`sv-step ${i % 2 === 0 ? 'slide-in-left' : 'slide-in-right'}`}>
-                <div className="sv-step-num">0{i + 1}</div>
-                <div className="sv-step-connector" />
-                <p>{step}</p>
-              </div>
-            ))}
-          </div>
+          <p className="sv-step-num">0{i + 1}</p>
+          <p className="sv-step-title">{step.title}</p>
+          <p className="sv-step-label">{step.desc}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
     </div>
+    </>
   )
 }

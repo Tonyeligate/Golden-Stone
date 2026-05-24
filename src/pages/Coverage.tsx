@@ -111,11 +111,17 @@ export default function Coverage() {
 </section>
 
       {/* ── PARTNERS ── */}
-   <section className="cov-partners">
-  <div className="container slide-in-right">
-    <p className="cov-partners-label">
-      Global alliances that extend our reach
-    </p>
+  <section className="cov-partners">
+  <div className="container">
+    <div className="cov-partners-header slide-in-right">
+      <span className="cov-partners-eyebrow">PARTNERSHIPS</span>
+      <h2 className="cov-partners-title">Our Trusted Clients &amp; Partners</h2>
+      <div className="cov-partners-divider" />
+      <p className="cov-partners-subtitle">
+        Building lasting relationships with industry leaders to deliver secure,
+        innovative, and nationwide postal solutions across Ghana.
+      </p>
+    </div>
 
     <div className="ticker">
       <div className="ticker-track">

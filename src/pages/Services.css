@@ -9,7 +9,7 @@
 /* ── HERO ── */
 .sv-hero {
   position: relative;
-  min-height: 92vh;
+  min-height: calc(100vh - 3rem);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -44,8 +44,8 @@
   position: relative;
   z-index: 2;
   max-width: 700px;
-  padding-top: 4rem;
-  padding-bottom: 8rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
   animation: svFadeUp 0.9s ease both;
 }
 
@@ -284,7 +284,7 @@
 
 /* ── STRIP ── */
 .sv-strip {
-  background: #060e23;
+   background: linear-gradient(160deg, #0a1628 0%, #0f1e3d 50%, #1a1a2e 100%);
   padding: 6rem 0;
 }
 
@@ -378,67 +378,102 @@
 
 /* ── PROCESS ── */
 .sv-process {
-  padding: 6rem 0 7rem;
+  padding: 5rem 0 6rem;
   background: #f5f7fa;
 }
 
-.sv-process-header {
-  margin-bottom: 3.5rem;
-}
-
-.sv-process-header h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 700;
-  color: #060e23;
-  line-height: 1.15;
-  margin: 0.4rem 0 0;
-}
-
-.sv-process-header h2 em {
-  font-style: italic;
+.sv-pill {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
   color: #e07b2e;
-}
-
-.sv-process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  position: relative;
-}
-
-.sv-step {
-  position: relative;
-  padding-right: 2rem;
-}
-
-.sv-step-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #e07b2e;
-  line-height: 1;
+  background: rgba(224,123,46,.1);
+  border: 0.5px solid rgba(224,123,46,.3);
+  border-radius: 20px;
+  padding: 5px 16px;
   margin-bottom: 1rem;
 }
 
-.sv-step-connector {
-  position: absolute;
-  top: 2rem;
-  right: 0;
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(224,123,46,0.5), transparent);
-}
+.sv-process-header { margin-bottom: 3.5rem; }
 
-.sv-step:last-child .sv-step-connector { display: none; }
-
-.sv-step p {
-  font-size: 0.9rem;
-  color: #556;
-  line-height: 1.7;
+.sv-process-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: #060e23;
+  line-height: 1.15;
   margin: 0;
 }
 
+.sv-process-header h2 em { font-style: italic; color: #e07b2e; }
+
+.sv-process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  position: relative;
+}
+
+/* connecting line between icons */
+.sv-process-steps::before {
+  content: '';
+  position: absolute;
+  top: 38px;
+  left: calc(12.5%);
+  right: calc(12.5%);
+  height: 1px;
+  background: linear-gradient(to right,
+    rgba(224,123,46,.1), rgba(224,123,46,.4),
+    rgba(224,123,46,.4), rgba(224,123,46,.1));
+}
+
+.sv-step {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding-right: 1.5rem;
+}
+
+.sv-step:last-child { padding-right: 0; }
+
+.sv-step-icon-wrap {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #fff;
+  border: 0.5px solid rgba(224,123,46,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sv-step-icon-wrap i { font-size: 28px; color: #e07b2e; }
+
+.sv-step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .7rem;
+  font-weight: 700;
+  color: rgba(224,123,46,.5);
+  letter-spacing: .1em;
+  margin: .25rem 0 0;
+}
+
+.sv-step-title {
+  font-size: .92rem;
+  font-weight: 600;
+  color: #060e23;
+  margin: 0 0 2px;
+}
+
+.sv-step-label {
+  font-size: .85rem;
+  color: #556;
+  line-height: 1.65;
+  margin: 0;
+}
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
   .sv-grid { grid-template-columns: repeat(2, 1fr); }

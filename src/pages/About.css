@@ -292,10 +292,135 @@
 .ab-info-blue { border-color: #2b6cb0; }
 .ab-info-orange { border-color: #e07b2e; }
 
+/* ── AWARDS & RECOGNITION ── */
+
+.ab-awards {
+  padding: 6rem 0;
+  background: linear-gradient(160deg, #0a1628 0%, #0f1e3d 50%, #1a1a2e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ab-awards::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(30, 80, 180, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ab-awards-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.5rem;
+}
+
+.ab-awards-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.75rem;
+  color: #f5c842;
+}
+
+.ab-awards-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.ab-awards-desc {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.ab-highlight-orange {
+  color: #f5a623;
+  font-weight: 700;
+}
+
+.ab-highlight-gold {
+  color: #f5c842;
+  font-weight: 700;
+}
+
+/* ── AWARDS GRID ── */
+.ab-awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.ab-award-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+}
+
+.ab-award-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(245, 168, 35, 0.4);
+  transform: translateY(-2px);
+}
+
+.ab-award-icon {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: #f5a623;
+}
+
+.ab-award-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.ab-award-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ab-award-issuer {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.82rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ab-awards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .ab-awards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── IDENTITY ── */
 .ab-identity {
   padding: 6rem 0;
-  background: #060e23;
+  background: #f0e2a628;
 }
 
 .ab-identity-header {
@@ -308,12 +433,12 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #fff;
+  color: #0c0606;
   margin: 0.5rem 0 0.75rem;
 }
 
 .ab-identity-header p {
-  color: rgba(255,255,255,0.5);
+  color: rgba(16, 14, 14, 0.5);
   font-size: 0.95rem;
   line-height: 1.7;
 }
@@ -334,7 +459,7 @@
 
 .ab-id-mission { background: rgba(43,108,176,0.15); border: 1px solid rgba(43,108,176,0.3); }
 .ab-id-vision  { background: rgba(224,123,46,0.12); border: 1px solid rgba(224,123,46,0.3); }
-.ab-id-values  { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+.ab-id-values  { background: rgba(200, 11, 11, 0.23); border: 1px solid rgba(211, 21, 21, 0.816); }
 
 .ab-id-icon {
   width: 58px;
@@ -352,12 +477,12 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem;
   font-weight: 700;
-  color: #fff;
+  color: #0a0202;
   margin: 0 0 0.75rem;
 }
 
 .ab-id-card p {
-  color: rgba(255,255,255,0.55);
+  color: rgba(23, 8, 8, 0.859);
   font-size: 0.88rem;
   line-height: 1.75;
   margin: 0;
@@ -372,7 +497,7 @@
 
 .ab-value-tags span {
   background: rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.75);
+  color: rgba(24, 9, 9, 0.947);
   font-size: 0.78rem;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
@@ -424,6 +549,199 @@
 }
 
 .ab-myear--active { background: #e07b2e; }
+
+@media (max-width: 980px) {
+  .ab-hero {
+    min-height: 70vh;
+  }
+
+  .ab-hero-content {
+    max-width: 100%;
+    padding-top: 3rem;
+  }
+
+  .ab-hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+  }
+
+  .ab-stats-bar {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    background: rgba(255,255,255,0.08);
+    border-top: none;
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+
+  .ab-stat {
+    padding: 1.2rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .ab-stat:nth-child(2),
+  .ab-stat:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .ab-story-grid,
+  .ab-identity-grid,
+  .ab-awards-grid,
+  .ab-milestones-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-story-grid {
+    gap: 2.5rem;
+  }
+
+  .ab-story-right {
+    padding-top: 1rem;
+  }
+
+  .ab-img-main {
+    height: auto;
+    min-height: 260px;
+  }
+
+  .ab-info-cards {
+    gap: 0.85rem;
+  }
+
+  .ab-info-card {
+    padding: 1.5rem;
+  }
+
+  .ab-awards-grid {
+    gap: 1.5rem;
+  }
+
+  .ab-recognition-panel {
+    order: 2;
+  }
+
+  .ab-award-card,
+  .ab-recognition-panel,
+  .ab-mcard,
+  .ab-id-card {
+    padding: 1.75rem;
+  }
+
+  .ab-section-tag h2,
+  .ab-identity-header h2 {
+    font-size: clamp(1.9rem, 5vw, 2.4rem);
+  }
+
+  .ab-tslider {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .ab-tgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-slider-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .ab-dots {
+    justify-content: center;
+  }
+
+  .ab-award-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .ab-recognition-panel h3 {
+    font-size: 1.55rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .ab-hero {
+    min-height: 60vh;
+  }
+
+  .ab-hero-content {
+    padding-top: 2.5rem;
+  }
+
+  .ab-hero-content h1 {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+
+  .ab-hero-content p,
+  .ab-section-tag p,
+  .ab-identity-header p,
+  .ab-recognition-panel p,
+  .ab-mcard p,
+  .ab-award-card p,
+  .ab-info-card p {
+    font-size: 0.95rem;
+  }
+
+  .ab-stats-bar {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .ab-stat {
+    padding: 1rem 0.85rem;
+    text-align: center;
+  }
+
+  .ab-story-left,
+  .ab-story-right,
+  .ab-identity-grid,
+  .ab-awards-grid,
+  .ab-milestones-grid,
+  .ab-tgrid {
+    gap: 1.25rem;
+  }
+
+  .ab-identity-grid,
+  .ab-awards-grid,
+  .ab-milestones-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-awards-grid {
+    margin-top: 2rem;
+  }
+
+  .ab-recognition-panel {
+    margin-top: 0;
+  }
+
+  .ab-award-card,
+  .ab-mcard,
+  .ab-id-card {
+    padding: 1.5rem;
+  }
+
+  .ab-tcard {
+    min-height: 0;
+  }
+
+  .ab-tslider {
+    padding: 0;
+  }
+
+  .ab-slider-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .ab-pill,
+  .ab-author-pill,
+  .ab-date-pill {
+    font-size: 0.72rem;
+  }
+}
 
 .ab-mcard p {
   color: #556;
