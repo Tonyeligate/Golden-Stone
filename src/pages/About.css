@@ -419,8 +419,8 @@
 
 /* ── IDENTITY ── */
 .ab-identity {
-  padding: 6rem 0;
-  background: #f0e2a628;
+  padding: 5rem 0;
+  background: snow;
 }
 
 .ab-identity-header {
@@ -430,61 +430,74 @@
 }
 
 .ab-identity-header h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #0c0606;
+  font-family: 'poppins', sans-serif;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: #f96e03;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
   margin: 0.5rem 0 0.75rem;
 }
 
 .ab-identity-header p {
-  color: rgba(16, 14, 14, 0.5);
+  color: rgba(16,14,14,0.55);
   font-size: 0.95rem;
   line-height: 1.7;
+  margin: 0;
 }
 
 .ab-identity-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
 .ab-id-card {
   border-radius: 20px;
-  padding: 2.5rem 2rem;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
   transition: transform 0.3s;
 }
 
 .ab-id-card:hover { transform: translateY(-6px); }
 
-.ab-id-mission { background: rgba(43,108,176,0.15); border: 1px solid rgba(43,108,176,0.3); }
-.ab-id-vision  { background: rgba(224,123,46,0.12); border: 1px solid rgba(224,123,46,0.3); }
-.ab-id-values  { background: rgba(200, 11, 11, 0.23); border: 1px solid rgba(211, 21, 21, 0.816); }
+.ab-id-mission { background: rgba(43,108,176,0.10); border: 0.5px solid rgba(43,108,176,0.3); }
+.ab-id-vision  { background: rgba(224,123,46,0.10); border: 0.5px solid rgba(224,123,46,0.3); }
+.ab-id-values  { background: rgba(139,28,28,0.10);  border: 0.5px solid rgba(180,30,30,0.3); }
 
 .ab-id-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.08);
+  width: 54px;
+  height: 54px;
+  border-radius: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 1.25rem;
+  flex-shrink: 0;
 }
+
+.ab-id-mission .ab-id-icon { background: rgba(43,108,176,0.15); }
+.ab-id-vision  .ab-id-icon { background: rgba(224,123,46,0.15); }
+.ab-id-values  .ab-id-icon { background: rgba(180,30,30,0.15); }
+
+.ab-id-mission .ab-id-icon i { color: #1a5ca8; font-size: 24px; }
+.ab-id-vision  .ab-id-icon i { color: #e07b2e; font-size: 24px; }
+.ab-id-values  .ab-id-icon i { color: #b41e1e; font-size: 24px; }
 
 .ab-id-card h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 800;
   color: #0a0202;
-  margin: 0 0 0.75rem;
+  margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .ab-id-card p {
-  color: rgba(23, 8, 8, 0.859);
-  font-size: 0.88rem;
-  line-height: 1.75;
+  color: rgba(23,8,8,0.75);
+  font-size: 0.87rem;
+  line-height: 1.78;
   margin: 0;
 }
 
@@ -492,64 +505,121 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .ab-value-tags span {
-  background: rgba(255,255,255,0.1);
-  color: rgba(24, 9, 9, 0.947);
-  font-size: 0.78rem;
-  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.15);
+  letter-spacing: 0.03em;
+  background: rgba(180,30,30,0.12);
+  color: #8b1c1c;
+  border: 0.5px solid rgba(180,30,30,0.25);
 }
 
 /* ── MILESTONES ── */
 .ab-milestones {
-  padding: 6rem 0;
+  padding: 5rem 0;
   background: #f5f7fa;
 }
 
 .ab-milestones-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
   margin-top: 3rem;
 }
 
 .ab-mcard {
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.07);
-  border-radius: 18px;
-  padding: 2rem;
-  min-height: 190px;
-  transition: transform 0.25s, box-shadow 0.25s;
+  border: 0.5px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.25s, border-color 0.25s;
 }
 
 .ab-mcard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+  border-color: rgba(224,123,46,0.35);
 }
 
-.ab-mcard--active { background: #060e23; }
-.ab-mcard--active p { color: rgba(255,255,255,0.75); }
+.ab-mcard--active {
+  background: #060e23;
+  border-color: transparent;
+}
 
-.ab-myear {
-  display: inline-flex;
+.ab-mcard-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ab-micon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(6,14,35,0.07);
+  display: flex;
   align-items: center;
   justify-content: center;
-  background: #060e23;
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.85rem;
-  border-radius: 999px;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1.25rem;
-  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.ab-myear--active { background: #e07b2e; }
+.ab-mcard--active .ab-micon {
+  background: rgba(224,123,46,0.2);
+}
 
+.ab-micon i {
+  font-size: 20px;
+  color: #060e23;
+}
+
+.ab-mcard--active .ab-micon i { color: #e07b2e; }
+
+.ab-myear {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #778;
+}
+
+.ab-mcard--active .ab-myear { color: rgba(255,255,255,0.4); }
+
+.ab-mcard-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #060e23;
+  margin: 0;
+}
+
+.ab-mcard--active .ab-mcard-label { color: #fff; }
+
+.ab-mcard-body {
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: #556;
+  margin: 0;
+}
+
+.ab-mcard--active .ab-mcard-body { color: rgba(255,255,255,0.65); }
+
+.ab-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 600;
+  color: #e07b2e;
+  background: rgba(224,123,46,0.1);
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-top: 0.25rem;
+}
 @media (max-width: 980px) {
   .ab-hero {
     min-height: 70vh;
@@ -763,7 +833,7 @@
 .ab-section-tag h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 3.5vw, 3rem);
-  color: #060e23;
+  color: #2d0101;
   line-height: 1.15;
   margin: 0.4rem 0;
 }
@@ -813,7 +883,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #060e23;
+  background: #f55105;
   color: #fff;
   font-size: 1.2rem;
   font-weight: 700;

@@ -3,12 +3,12 @@ import headerLogo from '../images/header.png'
 import './About.css'
 
 const milestones = [
-  { year: 'Our Beginning', description: 'Founded with local operations across 5 Ghanaian cities.' },
-  { year: 'Global Expansion', description: 'Expanded internationally, serving 50+ countries worldwide.' },
-  { year: 'Technology Breakthrough', description: 'Launched real-time GPS tracking system and mobile application.' },
-  { year: 'Major milestone', description: 'Reached 1 million monthly shipments milestone.' },
-  { year: 'Worldwide Reach', description: 'Expanded to 190+ countries and delivered 50M+ packages.' },
-  { year: 'Industry recognition', description: 'Recognized as a leading provider of sustainable shipping solutions.' },
+  { icon: 'ti-building-skyscraper', period: 'Founded',       label: 'Local roots, national reach',    description: 'Founded with local operations across 5 Ghanaian cities.',                              badge: '5 cities' },
+  { icon: 'ti-world',               period: 'International', label: 'Going global',                   description: 'Expanded internationally, serving 50+ countries worldwide.',                          badge: '50+ countries' },
+  { icon: 'ti-device-mobile',       period: 'Technology',    label: 'Tracking goes live',             description: 'Launched real-time GPS tracking system and mobile application.',                      badge: 'GPS + App' },
+  { icon: 'ti-chart-bar',           period: 'Growth',        label: 'A million shipments monthly',    description: 'Reached 1 million monthly shipments milestone.',                                      badge: '1M / month' },
+  { icon: 'ti-globe',               period: 'Expansion',     label: 'Truly worldwide',                description: 'Expanded to 190+ countries and delivered 50M+ packages.',                            badge: '190+ countries · 50M packages' },
+  { icon: 'ti-award',               period: 'Recognition',   label: 'Industry leader',                description: 'Recognized as a leading provider of sustainable shipping solutions.',                 badge: 'Award-winning' },
 ]
 
 const testimonials = [
@@ -63,7 +63,11 @@ function TestimonialsSlider() {
   const next = () => setCurrent(p => (p + 1) % total)
   const visible = [0, 1, 2].map(offset => testimonials[(current + offset) % total])
 
+
+  
   return (
+    
+    
     <section className="ab-testimonials">
       <div className="container">
         <div className="ab-section-tag">
@@ -185,37 +189,47 @@ export default function About() {
       </section>
 
       {/* ── IDENTITY ── */}
-      <section className="ab-identity">
-        <div className="container">
-          <div className="ab-identity-header slide-in-left">
-            <span className="ab-pill ab-pill--light">Who We Are</span>
-            <h2>Core Identity</h2>
-            <p>The principles driving our commitment to reliable logistics across the globe.</p>
-          </div>
-          <div className="ab-identity-grid">
-            <div className="ab-id-card ab-id-mission slide-in-left">
-              <div className="ab-id-icon">🎯</div>
-              <h3>Our Mission</h3>
-              <p>To provide fast, reliable, and affordable shipping solutions that connect people and businesses worldwide.</p>
-            </div>
-            <div className="ab-id-card ab-id-vision slide-in-right">
-              <div className="ab-id-icon">👁</div>
-              <h3>Our Vision</h3>
-              <p>To become the world's most trusted logistics company, setting industry standards for innovation and excellence.</p>
-            </div>
-            <div className="ab-id-card ab-id-values slide-in-left">
-              <div className="ab-id-icon">🛡</div>
-              <h3>Core Values</h3>
-              <div className="ab-value-tags">
-                <span>Integrity</span>
-                <span>Teamwork</span>
-                <span>Innovation</span>
-                <span>Excellence</span>
-              </div>
-            </div>
-          </div>
+     <section className="ab-identity">
+  <div className="container">
+    <div className="ab-identity-header slide-in-left">
+      <span className="ab-pill ab-pill--light">Who We Are</span>
+      <h2>Core Identity</h2>
+      <p>The principles driving our commitment to reliable logistics across the globe.</p>
+    </div>
+    <div className="ab-identity-grid">
+
+      <div className="ab-id-card ab-id-mission slide-in-left">
+        <div className="ab-id-icon">
+          <i className="ti ti-crosshair" aria-hidden="true"></i>
         </div>
-      </section>
+        <h3>Our Mission</h3>
+        <p>To provide fast, reliable, and affordable shipping solutions that connect people and businesses worldwide.</p>
+      </div>
+
+      <div className="ab-id-card ab-id-vision slide-in-right">
+        <div className="ab-id-icon">
+          <i className="ti ti-telescope" aria-hidden="true"></i>
+        </div>
+        <h3>Our Vision</h3>
+        <p>To become the world's most trusted logistics company, setting industry standards for innovation and excellence.</p>
+      </div>
+
+      <div className="ab-id-card ab-id-values slide-in-left">
+        <div className="ab-id-icon">
+          <i className="ti ti-shield-check" aria-hidden="true"></i>
+        </div>
+        <h3>Core Values</h3>
+        <div className="ab-value-tags">
+          <span>Integrity</span>
+          <span>Teamwork</span>
+          <span>Innovation</span>
+          <span>Excellence</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* ── AWARDS & RECOGNITION ── */}
       <section className="ab-awards">
@@ -253,26 +267,33 @@ export default function About() {
       </section>
 
       {/* ── MILESTONES ── */}
-      <section className="ab-milestones">
-        <div className="container">
-          <div className="ab-section-tag centered slide-in-left">
-            <span className="ab-pill">Our Journey</span>
-            <h2>Key Achievements</h2>
-            <div className="ab-underline" />
+     <section className="ab-milestones">
+  <div className="container">
+    <div className="ab-section-tag centered slide-in-left">
+      <span className="ab-pill">Our Journey</span>
+      <h2>Key Achievements</h2>
+      <div className="ab-underline" />
+    </div>
+    <div className="ab-milestones-grid">
+      {milestones.map((m, i) => {
+        const isActive = i === milestones.length - 1
+        return (
+          <div key={i} className={`ab-mcard ${isActive ? 'ab-mcard--active' : ''} ${i % 2 === 0 ? 'slide-in-left' : 'slide-in-right'}`}>
+            <div className="ab-mcard-top">
+              <div className="ab-micon">
+                <i className={`ti ${m.icon}`} aria-hidden="true" />
+              </div>
+              <span className="ab-myear">{m.period}</span>
+            </div>
+            <p className="ab-mcard-label">{m.label}</p>
+            <p className="ab-mcard-body">{m.description}</p>
+            <span className="ab-badge">{m.badge}</span>
           </div>
-          <div className="ab-milestones-grid">
-            {milestones.map((m, i) => {
-              const isActive = i === milestones.length - 1
-              return (
-                <div key={m.year} className={`ab-mcard ${isActive ? 'ab-mcard--active' : ''} ${i % 2 === 0 ? 'slide-in-left' : 'slide-in-right'}`}>
-                  <div className={`ab-myear ${isActive ? 'ab-myear--active' : ''}`}>{m.year}</div>
-                  <p>{m.description}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+        )
+      })}
+    </div>
+  </div>
+</section>
 
       <TestimonialsSlider />
 

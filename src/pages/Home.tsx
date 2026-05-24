@@ -23,6 +23,13 @@ type HeroSlide = {
   personAlt: string
 }
 
+type ServiceItem = {
+  icon: string
+  title: string
+  highlight: boolean
+  desc: string
+}
+
 const heroSlides: HeroSlide[] = [
   {
     eyebrow: 'Luxury Logistics',
@@ -165,7 +172,16 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
 
     document.querySelectorAll('.slide-in-left, .slide-in-right').forEach((el) => observer.observe(el))
     return () => observer.disconnect()
-  }, [])
+    }, [])
+
+  const services: ServiceItem[] = [
+    { icon: 'ti-truck-delivery', title: 'Fast Delivery',            highlight: false, desc: 'We are committed to moving goods quickly, safely and efficiently while ensuring every shipment arrives on time — delivery solutions businesses and individuals can trust.' },
+    { icon: 'ti-lock-check',     title: 'Secure Handling',          highlight: true,  desc: 'We implement rigorous safety protocols, advanced tracking systems, and secure packaging to ensure your goods are protected throughout the entire shipping process.' },
+    { icon: 'ti-map-2',          title: 'Nationwide Coverage',      highlight: false, desc: 'Our extensive network of service hubs across the country ensures we can deliver your shipments quickly and efficiently, no matter where you are located.' },
+    { icon: 'ti-headset',        title: '24/7 Support',             highlight: true,  desc: 'Our dedicated support team is available around the clock to assist you with any questions or concerns, ensuring you always have expert help when you need it.' },
+    { icon: 'ti-refresh',        title: 'Consistent & Dependable',  highlight: false, desc: 'Our commitment to excellence ensures that every shipment is handled with care and delivered on time, every time — meeting the highest standards of quality.' },
+    { icon: 'ti-bulb',           title: 'Strategic Solutions',      highlight: false, desc: 'Our experts work closely with you to develop customized logistics strategies that optimize your supply chain and drive real business success.' },
+  ]
 
   return (
     <div className="home-page">
@@ -330,60 +346,24 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
         </div>
       </section>
 
-      <section className="why-choose">
+<section className="why-choose">
   <div className="container">
     <div className="why-header">
-      <h2>Why Golden Stone </h2>
+      <h2>Why <em>Golden Stone</em></h2>
       <p className="why-subtitle">
-        Golden Stone Logistics Limited Company is committed to providing reliable, efficient and proffessional
-        logostics services that meet the growing demands of businesses and individuls. The company stands 
-        out through it dedication to customres satisfaction, timely delivery, and safe handling of goods.
-        With a strong focus on operational execellence, Golden Stone Logistices Limted Comapny ensure that
-        every shipment is managed with care, precision and attention to detail from start to finish.
+        Golden Stone Logistics Limited Company is committed to providing reliable, efficient and professional
+        logistics services that meet the growing demands of businesses and individuals. The company stands
+        out through its dedication to customer satisfaction, timely delivery, and safe handling of goods.
+        With a strong focus on operational excellence, Golden Stone Logistics ensures that every shipment
+        is managed with care, precision and attention to detail from start to finish.
       </p>
     </div>
-
     <div className="reason-grid">
-      {[
-        {
-          icon: '🚚',
-          title: 'Fast Delivery',
-          desc: 'Fast delivery is at the heart of Golden Stone Logistics Limited Company. We are committed to moving goods quickly, safely and efficiently while ensuring every shipment arrives on time. We provide delivert solutions businesses and individuals can trust.',
-          highlight: false,
-        },
-        {
-          icon: '🔐',
-          title: 'Secure Handling',
-          desc: 'Golden Stone Logistics Limited Company prioritizes shipments. We implement rigorous safety protocols, advanced tracking systems, and secure packaging to ensure that your goods are protected throughout the entire shipping process.',
-          highlight: true,
-        },
-        {
-          icon: '🌍',
-          title: 'Nationwide Coverage',
-          desc: 'We have a extensive network of service hubs across the country, ensuring that we can deliver your shipments quickly and efficiently, no matter where you are located.',
-          highlight: false,
-        },
-        {
-          icon: '🫂',
-          title: '24/7 Support',
-          desc: 'Our dedicated support team is available around the clock to assist you with any questions or concerns you may have. Customers benefit immensely from. Our high-impact trainings adopt varied learning methods and are delivered with a professional touch by world-class facilitators.',
-          highlight: true,
-        },
-        {
-          icon: '🤝',
-          title: 'Consistent and Dependable ',
-          desc: 'We provide consistent and dependable services that meet the highest standards of quality and reliability. Our commitment to excellence ensures that every shipment is handled with care and delivered on time, every time.',
-          highlight: false,
-        },
-        {
-          icon: '💡',
-          title: 'Strategic Solutions',
-          desc: 'We offer strategic logistics solutions designed to optimize your supply chain and enhance overall performance. Our team of experts works closely with you to develop customized strategies that meet your unique needs and drive business success.',
-          highlight: false,
-        },
-      ].map((service) => (
+      {services.map((service) => (
         <div key={service.title} className={`reason-card ${service.highlight ? 'card-highlight' : ''}`}>
-          <div className="reason-icon">{service.icon}</div>
+          <div className="reason-icon">
+            <i className={`ti ${service.icon}`} aria-hidden="true"></i>
+          </div>
           <h3>{service.title}</h3>
           <p>{service.desc}</p>
         </div>
