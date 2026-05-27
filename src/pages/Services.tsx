@@ -1,14 +1,16 @@
 import './Services.css'
-import expressImage from '../images/express.jpg'
+import safeImage from '../images/safe.jpg'
+import officeImage from '../images/office.jpeg'
 import handlingImage from '../images/handling.jpeg'
 import { FaTruck, FaPlane, FaShip, FaWarehouse, FaBoxes, FaBuilding } from 'react-icons/fa'
+import { useEffect, useRef } from 'react';
 
 const serviceItems = [
   {
     title: 'Express Freight',
     description: 'Fast, dedicated transit for high-priority shipments with real-time tracking and guaranteed delivery windows.',
     icon: FaTruck,
-    image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80',
+    image: safeImage,
     accentClass: 'blue',
   },
   {
@@ -29,7 +31,7 @@ const serviceItems = [
     title: 'Warehousing',
     description: 'Secure storage with temperature control, 24/7 surveillance, real-time inventory tracking, and express retrieval.',
     icon: FaWarehouse,
-    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
+    image: handlingImage,
     accentClass: 'orange',
   },
   {
@@ -43,7 +45,7 @@ const serviceItems = [
     title: 'Documentation Services',
     description: "Bill of lading, commercial invoice, packing list, and shipping clearance paperwork.",
     icon: FaBuilding,
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+    image: officeImage,
     accentClass: 'orange',
   },
 ]
@@ -56,6 +58,24 @@ const highlights = [
 ]
 
 export default function Services({ onNavigate }: { onNavigate?: (page: 'home' | 'services' | 'about' | 'coverage' | 'contact' | 'news') => void }) {
+  const stripRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = stripRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add('is-visible');
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
@@ -115,27 +135,34 @@ export default function Services({ onNavigate }: { onNavigate?: (page: 'home' | 
       </section>
 
       {/* ── FEATURE STRIP ── */}
-      <section className="sv-strip">
-        <div className="container sv-strip-inner">
-            <div className="sv-strip-text slide-in-left">
-            <span className="sv-pill sv-pill--light">Why Golden Stone Logistics Limited Company</span>
-            <h2>Every shipment.<br /><em>Every border.</em></h2>
-            <p>
-              From a single parcel to enterprise freight, we combine regional expertise with
-              global infrastructure to deliver on time, every time.
-            </p>
-            <button type="button" className="sv-cta" onClick={() => onNavigate?.('contact')}>Get a Quote →</button>
-          </div>
-          <div className="sv-strip-img slide-in-right">
-
-            <img src={handlingImage} alt="Cargo handling" className="sv-strip-video" />
-            <div className="sv-strip-badge">
-              <span>🏆</span>
-              <p>Top Logistics Provider<br /><strong>West Africa 2026</strong></p>
-            </div>
-          </div>
-        </div>
-      </section>
+  <section className="sv-strip" ref={stripRef}>
+  <div className="sv-strip-bg-overlay" />
+  <img src={handlingImage} alt="" className="sv-strip-bg-img" aria-hidden="true" />
+  <div className="sv-strip-content">
+    <h2 className="sv-strip-headline">
+      Every Shipment.<br />Every Border.
+    </h2>
+    <p className="sv-strip-sub">
+      From a single parcel to enterprise freight, we combine regional expertise with
+      global infrastructure to deliver on time, every time.
+    </p>
+    <div className="sv-strip-swoosh" aria-hidden="true">
+      <svg viewBox="0 0 600 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path
+          d="M 0 40 Q 300 0 600 40"
+          stroke="#e07b2e"
+          strokeWidth="3"
+          fill="none"
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+    <button type="button" className="sv-cta" onClick={() => onNavigate?.('contact')}>
+      Get a Quote →
+    </button>
+    <p className="sv-strip-domain">GOLDENSTONELOGISTICS.COM</p>
+  </div>
+</section>
 
       {/* ── PROCESS ── */}
       <section className="sv-process">

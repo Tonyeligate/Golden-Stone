@@ -52,7 +52,7 @@ const heroSlides: HeroSlide[] = [
   {
     eyebrow: 'Trusted Partners',
     headline: ['Your Cargo.', 'Our Commitment.', 'Every Time.'],
-    body: 'We treat every shipment as if it were our own â€” with the precision of professionals and the care of true partners.',
+    body: 'We treat every shipment as if it were our own — with the precision of professionals and the care of true partners.',
     primaryCta: { label: 'Partner With Us', nav: 'contact' },
     secondaryCta: { label: 'Case Studies', nav: 'services' },
     personImage: heroImg3,
@@ -61,7 +61,7 @@ const heroSlides: HeroSlide[] = [
   {
     eyebrow: 'Elite Service',
     headline: ['Speed Meets', 'Elegance in', 'Every Delivery.'],
-    body: 'Our white-glove logistics service ensures that premium goods arrive in perfect condition â€” on time, every time.',
+    body: 'Our white-glove logistics service ensures that premium goods arrive in perfect condition — on time, every time.',
     primaryCta: { label: 'Get Started', nav: 'contact' },
     secondaryCta: { label: 'Our Fleet', nav: 'services' },
     personImage: heroImg4,
@@ -98,66 +98,52 @@ function HeroSection({ onNavigate }: { onNavigate?: (page: PageName) => void }) 
   const slide = heroSlides[current]
 
   return (
-    <section className="hero-panel">
-      <div className="hero-texture-bg">
-        <div className="hero-noise" />
-        <div className="hero-blob hero-blob-1" />
-        <div className="hero-blob hero-blob-2" />
-        <div className="hero-blob hero-blob-3" />
-        <div className="hero-overlay" />
+   <section className="hero-panel">
+  {/* Background */}
+  <div className="hero-texture-bg">
+    <div className="hero-noise" />
+    <div className="hero-overlay" />
+  </div>
+
+  {/* Outer arrows */}
+  <button className="hero-arrow hero-arrow-prev" onClick={prev} aria-label="Previous slide">&#8250;</button>
+  <button className="hero-arrow hero-arrow-next" onClick={next} aria-label="Next slide">&#8250;</button>
+
+  <div className="container hero-grid">
+    <div className={`hero-copy ${animating ? 'copy-exit' : 'copy-enter'}`}>
+      <h1 className="hero-headline">
+        {slide.headline.map((line, i) => (
+          <span key={`${current}-${i}`} className="headline-line">{line}</span>
+        ))}
+      </h1>
+      <p className="hero-text">
+        <mark className="hero-highlight">Level up</mark>{' '}{slide.body}
+      </p>
+      <div className="hero-actions">
+        <button className="btn btn-outline-dark" type="button" onClick={() => onNavigate?.(slide.primaryCta.nav)}>
+          {slide.primaryCta.label}
+        </button>
       </div>
+    </div>
 
-      <div className="container hero-grid">
-        <div className={`hero-copy ${animating ? 'copy-exit' : 'copy-enter'}`}>
-          <p className="eyebrow">{slide.eyebrow}</p>
-          <h1 className="hero-headline">
-            {slide.headline.map((line, i) => (
-              <span
-                key={`${current}-${i}`}
-                className="headline-line"
-              >
-                {line}
-              </span>
-            ))}
-          </h1>
-          <p className="hero-text">{slide.body}</p>
-          <div className="hero-actions">
-            <button className="btn btn-gold" type="button" onClick={() => onNavigate?.(slide.primaryCta.nav)}>
-              {slide.primaryCta.label}
-            </button>
-            <button className="btn btn-outline" type="button" onClick={() => onNavigate?.(slide.secondaryCta.nav)}>
-              {slide.secondaryCta.label}
-            </button>
-          </div>
-          <div className="hero-dots">
-            {heroSlides.map((_, i) => (
-              <button
-                key={i}
-                className={`hero-dot ${i === current ? 'active' : ''}`}
-                onClick={() => goTo(i)}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="hero-visual">
-          <div className={`person-frame ${animating ? 'img-exit' : 'img-enter'}`}>
-            <div className="person-glow" />
-            <img key={current} src={slide.personImage} alt={slide.personAlt} className="person-img" />
-          </div>
-
-          <button className="hero-arrow hero-arrow-prev" onClick={prev} aria-label="Previous slide">
-            &#8592;
-          </button>
-          <button className="hero-arrow hero-arrow-next" onClick={next} aria-label="Next slide">
-            &#8594;
-          </button>
-        </div>
+    <div className="hero-visual">
+      <div className={`person-frame ${animating ? 'img-exit' : 'img-enter'}`}>
+        <img key={current} src={slide.personImage} alt={slide.personAlt} className="person-img" />
       </div>
-    </section>
+    </div>
+  </div>
+
+  {/* Dots */}
+  <div className="hero-dots">
+    {heroSlides.map((_, i) => (
+      <button key={i} className={`hero-dot ${i === current ? 'active' : ''}`}
+        onClick={() => goTo(i)} aria-label={`Go to slide ${i + 1}`} />
+    ))}
+  </div>
+</section>
   )
 }
+
 
 export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => void }) {
   useEffect(() => {
@@ -205,7 +191,7 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
               {
                 tier: 'Standard',
                 name: 'Standard Shipping',
-                time: '5 â€“ 7 Business Days',
+                time: '5 – 7 Business Days',
                 price: '15',
                 cents: '.99',
                 features: ['Domestic & International', 'Package weight up to 50 kg', 'Basic insurance included'],
@@ -213,7 +199,7 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
               {
                 tier: 'Express',
                 name: 'Express Shipping',
-                time: '2 â€“ 3 Business Days',
+                time: '2 – 3 Business Days',
                 price: '29',
                 cents: '.99',
                 features: ['Priority handling guaranteed', 'Real-time GPS tracking', 'Full insurance coverage'],
@@ -244,9 +230,9 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
                 <ul className="rate-features">
                   {plan.features.map((feature) => (
                     <li key={feature}>
-                      <span className="rate-check">âœ“</span>
-                      {feature}
-                    </li>
+                        <span className="rate-check">✓</span>
+                        {feature}
+                      </li>
                   ))}
                 </ul>
                 <button type="button" className="rate-btn" onClick={() => onNavigate?.('contact')}>
@@ -306,7 +292,7 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
             <div className="svc-img-accent">
               <img src={deliveryImage} alt="Courier delivery" />
             </div>
-            <div className="svc-img-tag">âœ¦ Excellence in Logistics</div>
+            <div className="svc-img-tag">• Excellence in Logistics</div>
           </div>
 
           <div className="svc-content slide-in-right">
@@ -318,15 +304,15 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
               Our <em>Services</em>
             </h2>
             <p className="svc-desc">
-              We provide an extensive range of postal, courier, and financial solutions â€” precision-engineered for individuals and enterprises that demand reliability.
+              We provide an extensive range of postal, courier, and financial solutions — precision-engineered for individuals and enterprises that demand reliability.
             </p>
 
             <div className="svc-list">
               {[
-                { icon: 'ðŸ“©', name: 'Custom Clearance', sub: 'Ensuring compliance with government regulations' },
-                { icon: 'ðŸšš', name: 'Freight Transportation', sub: 'Sea freight and Air freight' },
-                { icon: 'ðŸ’³', name: 'Documentation Services', sub: 'Shipping and clearance paperwork' },
-                { icon: 'ðŸ›’', name: 'eCommerce / eServices', sub: 'Fulfillment, last-mile, and returns management' },
+                { icon: '📩', name: 'Custom Clearance', sub: 'Ensuring compliance with government regulations' },
+                { icon: '🚚', name: 'Freight Transportation', sub: 'Sea freight and Air freight' },
+                { icon: '📄', name: 'Documentation Services', sub: 'Shipping and clearance paperwork' },
+                { icon: '🛒', name: 'eCommerce / eServices', sub: 'Fulfillment, last-mile, and returns management' },
               ].map((service) => (
                 <button className="svc-item" type="button" onClick={() => onNavigate?.('services')} key={service.name}>
                   <div className="svc-item-icon">{service.icon}</div>
@@ -334,13 +320,13 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
                     <span className="svc-item-name">{service.name}</span>
                     <span className="svc-item-sub">{service.sub}</span>
                   </div>
-                  <span className="svc-item-arrow">â†’</span>
+                  <span className="svc-item-arrow">→</span>
                 </button>
               ))}
             </div>
 
             <button className="svc-cta" type="button" onClick={() => onNavigate?.('services')}>
-              Explore all services <span className="svc-cta-arrow">â†’</span>
+              Explore all services <span className="svc-cta-arrow">→</span>
             </button>
           </div>
         </div>
@@ -374,7 +360,7 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
       <section className="cta-modern">
         <div className="cta-wrapper">
           <div className="cta-left">
-            <div className="cta-badge">ðŸš€ START SHIPPING</div>
+            <div className="cta-badge">🚀 START SHIPPING</div>
             <h3>Ship Smarter with Golden Stone Logistics Limited Company</h3>
             <p>Fast. Secure. Reliable logistics built for businesses and individuals.</p>
           </div>
@@ -403,7 +389,7 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
               Easily locate your nearest service hub, access essential contact information, and get step-by-step directions for a seamless experience. Whether you're shipping, tracking, or making inquiries, we help you find the best route.
             </p>
             <a className="btn-primary" href="https://maps.apple/p/yBcdbtggvruhq6" target="_blank" rel="noopener noreferrer">
-              Find Location â†’
+              Find Location →
             </a>
           </div>
           <div className="location-image slide-in-right">

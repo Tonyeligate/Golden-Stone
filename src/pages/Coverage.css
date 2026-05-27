@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
 
 .coverage-page {
   font-family: 'DM Sans', sans-serif;
@@ -18,7 +18,7 @@
 .cov-hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80');
+  background-image: url('../images/coverage.png');
   background-size: cover;
   background-position: center 30%;
   transform: scale(1.04);
@@ -266,10 +266,9 @@
   }
 }
 
-/* ── PARTNERS ── */
 /* ── PARTNERS SECTION ── */
 .cov-partners {
-  background: #ffffff;
+  background: #fff;
   padding: 5rem 0 4rem;
   overflow: hidden;
 }
