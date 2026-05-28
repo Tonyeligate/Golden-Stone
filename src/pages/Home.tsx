@@ -33,7 +33,7 @@ type ServiceItem = {
 const heroSlides: HeroSlide[] = [
   {
     eyebrow: 'Luxury Logistics',
-    headline: ['Premium Logistics.', 'Delivered with', 'Precision.'],
+    headline: ['Premium Logistics.', 'Delivered with', 'Precision', 'World Wide.'],
     body: 'Golden Stone Logistics moves your cargo with unmatched care, speed, and elegance. Built for brands that demand confidence.',
     primaryCta: { label: 'Get a Quote', nav: 'contact' },
     secondaryCta: { label: 'Our Services', nav: 'services' },
@@ -42,7 +42,7 @@ const heroSlides: HeroSlide[] = [
   },
   {
     eyebrow: 'Global Reach',
-    headline: ['Connecting Worlds.', 'Cargo Without', 'Borders.'],
+    headline: ['Connecting Worlds.', 'Cargo Without', 'Borders.', 'Company You Can Trust'],
     body: 'From local deliveries to international freight, our network spans every corner of the globe with flawless coordination.',
     primaryCta: { label: 'Explore Routes', nav: 'services' },
     secondaryCta: { label: 'About Us', nav: 'about' },

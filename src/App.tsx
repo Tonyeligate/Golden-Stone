@@ -142,9 +142,9 @@ function App() {
               Golden Stone Logistics Limited Company remains the trusted choice for secure, premium and efficient logistics solutions across Ghana and beyond.
             </p>
             <div className="footer-contact-info">
-              <p>5th Avemue, Tema Community 11</p>
+              <p>5th Avenue, Tema Community 11</p>
               <p>+233 536 381 700</p>
-              <p>goldenstoneloistics@gmail.com</p>
+              <p>goldenstonelogistics@gmail.com</p>
             </div>
           </div>
 
@@ -199,7 +199,7 @@ function App() {
           </a>
 
           <a
-            href="mailto:goldenstoneloistics@gmail.com"
+            href="mailto:goldenstonelogistics@gmail.com"
             aria-label="Email"
             title="Email"
             data-label="Email"
@@ -242,7 +242,7 @@ function App() {
         </div>
 
         <div className="container footer-bottom">
-          <p>© 2026 Golden State Logistics. All rights reserved.</p>
+          <p>© 2026 Golden Stone Logistics. All rights reserved.</p>
         </div>
       </footer>
     </div>

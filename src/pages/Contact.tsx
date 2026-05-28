@@ -144,7 +144,7 @@ export default function Contact() {
                 <div className="ct-info-icon">✉️</div>
                 <div>
                   <p className="ct-info-label">Email</p>
-                  <p className="ct-info-value">goldenstoneloistics@gmail.com</p>
+                  <p className="ct-info-value">goldenstonelogistics@gmail.com</p>
                 </div>
               </div>
               <div className="ct-info-item">

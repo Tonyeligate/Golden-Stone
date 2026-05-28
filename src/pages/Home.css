@@ -13,6 +13,13 @@
   padding: 0;
 }
 
+.hero-panel > .container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 /* ── Concrete/texture background ── */
 .hero-texture-bg {
   position: absolute;
@@ -51,18 +58,20 @@
   z-index: 3;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: flex-end;
+  /* center vertically so the headline sits a bit higher */
+  align-items: center;
   width: 100%;
   height: 100%;
   min-height: 0;
-  padding: 0 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
 }
 
 /* ── Copy ── */
 .hero-copy {
-  padding: 8rem 2rem 6rem 1rem;
+  /* reduce top padding so headline sits higher on the page */
+  padding: 4.5rem 2rem 6rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,7 +124,7 @@
 
 /* ── Body text ── */
 .hero-text {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'poppins', sans-serif;
   font-size: clamp(1.05rem, 1.6vw, 1.3rem);
   color: #333333;
   line-height: 1.65;
@@ -126,7 +135,7 @@
 
 /* ── Yellow highlight ── */
 .hero-highlight {
-  background: #f5e642;
+  background: #ff8001;
   color: #111;
   padding: 0 4px 2px;
   border-radius: 3px;
@@ -154,7 +163,7 @@
 }
 
 .btn-outline-dark:hover {
-  background: #111;
+  background: #ff6004;
   color: #fff;
 }
 
@@ -289,7 +298,8 @@
   .hero-grid {
     grid-template-columns: 1fr;
     height: auto;
-    padding-top: 6rem;
+    /* Spacious preset: more breathing room under the fixed header */
+    padding-top: 4rem;
   }
 
   .hero-visual {
@@ -309,6 +319,11 @@
 @media (max-width: 600px) {
   .hero-headline { font-size: clamp(2.4rem, 10vw, 3.5rem); }
   .hero-text { font-size: 1rem; }
+
+  /* Spacious preset: larger dots and more separation on narrow screens */
+  .hero-dots { bottom: 1.8rem; }
+  .hero-dot { width: 8px; height: 8px; }
+  .hero-dot.active { transform: scale(1.3); }
 }
 
 /* ═══════════════════════════════════════════════
