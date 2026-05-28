@@ -17,6 +17,7 @@ import {
   Send as SendIcon,
   Lock as LockIcon,
 } from 'lucide-react';
+import { Clock as ClockIcon, Phone as PhoneIcon, Navigation as NavigationIcon, ExternalLink as ExternalLinkIcon } from 'lucide-react';
 
 type PageName = 'home' | 'services' | 'about' | 'coverage' | 'contact' | 'news';
 
@@ -522,31 +523,88 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
         </div>
       </section>
 
-      <section className="location-section">
-        <div className="container location-grid">
-          <div className="location-text slide-in-left">
-            <p className="eyebrow">Location</p>
-            <h2>Find a Service Hub</h2>
-            <div className="underline" />
-            <p>
-              Easily locate your nearest service hub, access essential contact information, and get
-              step-by-step directions for a seamless experience. Whether you're shipping, tracking,
-              or making inquiries, we help you find the best route.
-            </p>
-            <a
-              className="btn-primary"
-              href="https://maps.apple/p/yBcdbtggvruhq6"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Find Location →
-            </a>
-          </div>
-          <div className="location-image slide-in-right">
-            <img src={mapImage} alt="Map location" />
+     <section className="location-section">
+  <div className="location-container">
+
+    <div className="location-text slide-in-left">
+      <span className="loc-eyebrow">
+        <MapPinIcon size={13} />
+        Our Location
+      </span>
+      <h2>Find Our <span className="loc-highlight">Service Hub</span></h2>
+      <div className="loc-accent" />
+      <p>
+        Locate our nearest service hub, access essential contact information,
+        and get step-by-step directions for a seamless experience. Whether
+        you're shipping, tracking, or making inquiries — we're easy to find.
+      </p>
+
+      <div className="loc-details">
+        <div className="loc-detail-item">
+          <div className="loc-detail-icon"><MapPinIcon size={15} /></div>
+          <div>
+            <span className="loc-detail-label">Address</span>
+            <span className="loc-detail-value">5th Avenue, Tema Community 11, Ghana</span>
           </div>
         </div>
-      </section>
+        <div className="loc-detail-item">
+          <div className="loc-detail-icon"><ClockIcon size={15} /></div>
+          <div>
+            <span className="loc-detail-label">Working Hours</span>
+            <span className="loc-detail-value">Mon – Sat, 8:00am – 5:00pm</span>
+          </div>
+        </div>
+        <div className="loc-detail-item">
+          <div className="loc-detail-icon"><PhoneIcon size={15} /></div>
+          <div>
+            <span className="loc-detail-label">Phone</span>
+            <span className="loc-detail-value">+233 536 381 700</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <a
+        className="loc-btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=5th+Avenue+Tema+Community+11+Tema+Ghana"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <NavigationIcon size={15} />
+        Get Directions
+      </a>
     </div>
+
+    <div className="location-map-card slide-in-right">
+      <div className="map-header">
+        <div className="map-header-dot" />
+        <span>Golden Stone Logistics — 5th Avenue, Tema Community 11, Ghana</span>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=5th+Avenue+Tema+Community+11+Tema+Ghana"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="map-open-link"
+        >
+          <ExternalLinkIcon size={13} />
+          Open in Maps
+        </a>
+      </div>
+      <div className="map-frame-wrap">
+        <iframe
+          title="Golden Stone Logistics Location"
+          src="https://www.google.com/maps?q=5th+Avenue+Tema+Community+11+Tema+Ghana&output=embed"
+          width="100%"
+          height="100%"
+          className="map-iframe"
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+  </div>
   );
 }

@@ -134,6 +134,7 @@ export default function News({ onNavigate }: NewsProps) {
   }, [activeCategory, posts]);
 
   const featured = posts.find((p) => p.featured) ?? posts[0];
+  const grid = visiblePosts.filter((p) => !p.featured || activeCategory !== 'All');
 
   const openArticle = (post: Post) => {
     const page = ARTICLE_PAGE_MAP[post.id] ?? 'news';

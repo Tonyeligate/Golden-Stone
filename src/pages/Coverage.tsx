@@ -8,7 +8,15 @@ import upsLogo from '../images/ups.jpeg';
 import lineLogo from '../images/line.jpg';
 import googleLogo from '../images/google.jpg';
 import { HiOutlineLocationMarker, HiOutlineTruck, HiOutlineOfficeBuilding } from 'react-icons/hi';
+import { FaCalendarAlt, FaBox, FaSatellite, FaCheckCircle } from 'react-icons/fa';
+// Using simple inline icons to avoid dependency mismatches with lucide-react exports
 
+const steps = [
+  { num: '01', title: 'Schedule Your Shipment', shortLabel: 'Schedule', Icon: FaCalendarAlt, desc: 'Book online or call us. Share your pickup details, destination, and preferred timeline — we handle the rest.' },
+  { num: '02', title: 'We Pick Up Your Package', shortLabel: 'Pickup', Icon: FaBox, desc: 'Our team arrives on time, carefully packages your items, and securely loads them for transit.' },
+  { num: '03', title: 'Monitor in Real Time', shortLabel: 'Monitor', Icon: FaSatellite, desc: 'Track every movement via our live dashboard. Get SMS and email updates at every milestone.' },
+  { num: '04', title: 'Safe Delivery, Confirmed', shortLabel: 'Delivered', Icon: FaCheckCircle, desc: 'Your recipient signs off on delivery. You get instant confirmation and a full digital receipt.' },
+];
 const regions = [
   {
     name: 'Greater Accra',
@@ -27,7 +35,7 @@ const regions = [
   },
 ];
 
-const steps = [
+const processCards = [
   {
     num: '01',
     title: 'Book & Confirm',
@@ -140,35 +148,61 @@ export default function Coverage() {
         </div>
       </section>
 
-      {/* ── PROCESS ── */}
       <section className="cov-process">
-        <div className="container">
-          <div className="cov-section-label centered">
-            <span className="cov-pill">Our Process</span>
-            <h2>
-              Delivery designed for
-              <br />
-              clarity and confidence.
-            </h2>
+  <div className="container">
+    <div className="cov-section-label centered">
+      <span className="cov-pill">
+        <span style={{marginRight:6}}>🗺️</span>
+        Our Process
+      </span>
+      <h2>
+        Delivery designed for <br />
+        <em className="proc-em">clarity and confidence.</em>
+      </h2>
+      <p className="proc-subtitle">
+        Every shipment follows a precise four-step journey — transparent,
+        trackable, and built around your peace of mind.
+      </p>
+    </div>
+
+    <div className="process-track slide-in-right">
+      {steps.map((s) => (
+        <div key={s.num} className={`process-step step-${s.num}`}>
+          <div className="process-overlay" />
+          <div className="proc-step-num">{s.num}</div>
+          <div className="proc-icon-badge">
+            <s.Icon size={18} />
           </div>
-
-          <div className="process-track slide-in-right">
-            {steps.map((s) => (
-              <div key={s.num} className={`process-step step-${s.num}`}>
-                <div className="process-overlay" />
-
-                <div className="process-content">
-                  <div className="process-num">{s.num}</div>
-                  <div className="process-body">
-                    <h3>{s.title}</h3>
-                    <p>{s.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="process-content">
+            <div className="proc-connector">
+              <div className="proc-dot" />
+              <div className="proc-line" />
+            </div>
+            <div className="process-body">
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+              <span className="proc-learn">
+                
+              </span>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
     </div>
+
+    <div className="proc-footer">
+      {steps.map((s, i) => (
+        <div className="pf-item" key={s.num}>
+          <div className="pf-step">
+            <div className="pf-num">{s.num}</div>
+            <div className="pf-label">{s.shortLabel}</div>
+          </div>
+          {i < steps.length - 1 && <span className="pf-arrow">›</span>}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+  </div>
   );
 }

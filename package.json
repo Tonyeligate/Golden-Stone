@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "node ./node_modules/typescript/bin/tsc -b && node ./node_modules/vite/bin/vite.js build",
-    "preview": "vite preview",
-    "lint": "eslint -c .eslintrc.cjs --no-ignore \"src/**/*.{ts,tsx}\" --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx,css,js,jsx,json,md}\""
+    "preview": "vite preview"
   },
   "dependencies": {
     "lucide-react": "^1.16.0",
@@ -22,7 +20,7 @@
     "@typescript-eslint/eslint-plugin": "^8.60.0",
     "@typescript-eslint/parser": "^8.60.0",
     "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^8.57.1",
+    "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
