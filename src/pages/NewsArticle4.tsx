@@ -1,8 +1,8 @@
-import type { PageKey } from '../types'
+import type { PageKey } from '../types';
 
 type ArticleProps = {
-  onNavigate: (page: PageKey) => void
-}
+  onNavigate: (page: PageKey) => void;
+};
 
 export default function NewsArticle4({ onNavigate }: ArticleProps) {
   return (
@@ -26,18 +26,26 @@ export default function NewsArticle4({ onNavigate }: ArticleProps) {
                 <span className="news-read">⏱ 5 min read</span>
               </div>
               <p>
-                Analysts predict a 28% surge in cross-border freight demand across Africa as AfCFTA begins to unlock new trade corridors. Golden Stone Logistics is preparing for this wave by scaling operations and investing in network resilience.
+                Analysts predict a 28% surge in cross-border freight demand across Africa as AfCFTA
+                begins to unlock new trade corridors. Golden Stone Logistics is preparing for this
+                wave by scaling operations and investing in network resilience.
               </p>
               <p>
-                The company reports that stronger regional integration has already increased demand for consolidated shipments, customs advisory services, and intra-African trucking routes. These shifts are driving more businesses to seek reliable logistics partners.
+                The company reports that stronger regional integration has already increased demand
+                for consolidated shipments, customs advisory services, and intra-African trucking
+                routes. These shifts are driving more businesses to seek reliable logistics
+                partners.
               </p>
               <p>
-                Golden Stone is positioning itself as a growth partner for exporters and distributors, offering tailored solutions for import compliance, temperature-sensitive transit, and digital visibility. The firm aims to support a more connected and efficient logistics landscape.
+                Golden Stone is positioning itself as a growth partner for exporters and
+                distributors, offering tailored solutions for import compliance,
+                temperature-sensitive transit, and digital visibility. The firm aims to support a
+                more connected and efficient logistics landscape.
               </p>
             </div>
           </article>
         </div>
       </section>
     </div>
-  )
+  );
 }

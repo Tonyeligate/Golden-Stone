@@ -1,8 +1,8 @@
-import type { PageKey } from '../types'
+import type { PageKey } from '../types';
 
 type ArticleProps = {
-  onNavigate: (page: PageKey) => void
-}
+  onNavigate: (page: PageKey) => void;
+};
 
 export default function NewsArticle1({ onNavigate }: ArticleProps) {
   return (
@@ -26,21 +26,29 @@ export default function NewsArticle1({ onNavigate }: ArticleProps) {
                 <span className="news-read">⏱ 4 min read</span>
               </div>
               <p>
-                Golden Stone Logistics has broadened its delivery network across six new regions in Ghana, bringing premium logistics services closer to more communities. The expansion includes dedicated local teams,
-                faster pick-up windows, and new cross-regional routes designed for both corporate shipments and retail customers.
+                Golden Stone Logistics has broadened its delivery network across six new regions in
+                Ghana, bringing premium logistics services closer to more communities. The expansion
+                includes dedicated local teams, faster pick-up windows, and new cross-regional
+                routes designed for both corporate shipments and retail customers.
               </p>
               <p>
-                The company now offers expedited warehousing and distribution support in key regional hubs, with advanced tracking systems that let customers follow goods in real time. Local operators were trained on the brand’s
-                customs clearance and high-value handling standards, ensuring smoother movement for importers and exporters.
+                The company now offers expedited warehousing and distribution support in key
+                regional hubs, with advanced tracking systems that let customers follow goods in
+                real time. Local operators were trained on the brand’s customs clearance and
+                high-value handling standards, ensuring smoother movement for importers and
+                exporters.
               </p>
               <p>
-                Leadership says this move answers growing demand from small businesses and manufacturers that need reliable delivery across major economic corridors. By focusing on efficient route planning and stronger regional
-                partnerships, Golden Stone expects to reduce average transit times while maintaining premium service levels.
+                Leadership says this move answers growing demand from small businesses and
+                manufacturers that need reliable delivery across major economic corridors. By
+                focusing on efficient route planning and stronger regional partnerships, Golden
+                Stone expects to reduce average transit times while maintaining premium service
+                levels.
               </p>
             </div>
           </article>
         </div>
       </section>
     </div>
-  )
+  );
 }

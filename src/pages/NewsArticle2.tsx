@@ -1,8 +1,8 @@
-import type { PageKey } from '../types'
+import type { PageKey } from '../types';
 
 type ArticleProps = {
-  onNavigate: (page: PageKey) => void
-}
+  onNavigate: (page: PageKey) => void;
+};
 
 export default function NewsArticle2({ onNavigate }: ArticleProps) {
   return (
@@ -26,21 +26,27 @@ export default function NewsArticle2({ onNavigate }: ArticleProps) {
                 <span className="news-read">⏱ 3 min read</span>
               </div>
               <p>
-                Golden Stone Logistics has entered a strategic international partnership with Maersk Line to expand its freight corridors and strengthen ocean freight capacity. The partnership provides customers with enhanced global
-                reach through priority booking, improved transit reliability, and streamlined customs handling.
+                Golden Stone Logistics has entered a strategic international partnership with Maersk
+                Line to expand its freight corridors and strengthen ocean freight capacity. The
+                partnership provides customers with enhanced global reach through priority booking,
+                improved transit reliability, and streamlined customs handling.
               </p>
               <p>
-                The collaboration also brings new service options for exporters in Ghana, including direct export sailings, faster port handoffs, and simpler documentation workflows. Golden Stone will leverage Maersk’s expertise in
-                vessel scheduling and global logistics to offer more predictable transit windows for key trading lanes.
+                The collaboration also brings new service options for exporters in Ghana, including
+                direct export sailings, faster port handoffs, and simpler documentation workflows.
+                Golden Stone will leverage Maersk’s expertise in vessel scheduling and global
+                logistics to offer more predictable transit windows for key trading lanes.
               </p>
               <p>
-                Executives said the move underscores a broader ambition to position the company as a premium logistics bridge between West Africa and international markets. Customers can now access integrated door-to-door solutions that
-                combine local execution with global freight capacity.
+                Executives said the move underscores a broader ambition to position the company as a
+                premium logistics bridge between West Africa and international markets. Customers
+                can now access integrated door-to-door solutions that combine local execution with
+                global freight capacity.
               </p>
             </div>
           </article>
         </div>
       </section>
     </div>
-  )
+  );
 }

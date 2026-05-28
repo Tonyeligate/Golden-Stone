@@ -904,94 +904,106 @@
     grid-template-columns: 1fr;
   }
 }
-.cta-modern {
-  padding: 100px 20px;
-  background: #b7bb6334;
-}
+.cta-modern { padding: 60px 20px; }
 
 .cta-wrapper {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  border-radius: 30px;
+  grid-template-columns: 1fr 1.25fr;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
-  background: white;
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
-/* LEFT PANEL */
+/* LEFT */
 .cta-left {
-  background: linear-gradient(135deg, #7d671e, #ebbd25);
+  background: linear-gradient(150deg, #7d671e 0%, #c9a020 55%, #ebbd25 100%);
   color: white;
-  padding: 60px;
+  padding: 56px 52px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
-
-.cta-left h3 {
-  font-size: 1.9rem;
-  font-weight: 800;
-  margin: 20px 0 15px;
+.cta-left::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
 }
-
-.cta-left p {
-  opacity: 0.9;
-  line-height: 1.6;
-}
-
 .cta-badge {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
   background: rgba(255,255,255,0.15);
+  border: 0.5px solid rgba(255,255,255,0.25);
   padding: 6px 14px;
   border-radius: 20px;
   width: fit-content;
+  margin-bottom: 22px;
+  color: #fff5cc;
 }
-
-/* RIGHT PANEL */
-.cta-right {
-  padding: 60px;
-  background: #ffffff;
-}
-
-.cta-right h2 {
-  font-size: 2.2rem;
+.cta-left h3 {
+  font-size: 1.85rem;
   font-weight: 800;
-  color: #e7730d;
-  margin-bottom: 10px;
+  line-height: 1.25;
+  margin: 0 0 18px;
+}
+.cta-left p { opacity: 0.88; line-height: 1.7; margin: 0 0 32px; }
+
+.cta-features { display: flex; flex-direction: column; gap: 12px; }
+.feat-item { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.9); }
+.feat-icon {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  color: #fff5cc;
 }
 
-.cta-underline {
-  width: 50px;
-  height: 4px;
-  background: #f97316;
-  border-radius: 2px;
-  margin-bottom: 20px;
+/* RIGHT */
+.cta-right {
+  padding: 56px 52px;
+  background: #f5da0e25;
+  display: flex; flex-direction: column; justify-content: center;
 }
-
-.cta-right p {
-  color: #6b7280;
-  margin-bottom: 30px;
-  line-height: 1.7;
+.cta-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 1.1px;
+  text-transform: uppercase; color: #b8861a; margin-bottom: 14px;
 }
+.cta-right h2 { font-size: 2.1rem; font-weight: 800; color: #1a1a1a; line-height: 1.2; margin: 0 0 14px; }
+.cta-accent { width: 44px; height: 3px; background: linear-gradient(90deg, #ebbd25, #c9a020); border-radius: 2px; margin-bottom: 20px; }
+.cta-right p { color: #6b7280; margin-bottom: 32px; line-height: 1.75; }
 
-/* BUTTON SPACING */
-.cta-right .btn {
-  padding: 14px 28px;
-  font-size: 1rem;
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: linear-gradient(135deg, #ea5d0c, #c95820);
+  color: #fff; border: none;
+  padding: 15px 30px; border-radius: 12px;
+  font-size: 0.97rem; font-weight: 600;
+  cursor: pointer; transition: opacity .2s, transform .2s;
+  width: fit-content;
 }
+.cta-btn:hover { opacity: 0.9; transform: translateY(-1px); }
 
-/* SMALL TEXT */
-.cta-small-text {
-  display: block;
-  margin-top: 15px;
-  font-size: 0.85rem;
-  color: #9ca3af;
+.cta-trust {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 18px; font-size: 0.82rem; color: #9ca3af;
 }
+.cta-trust-dot { width: 5px; height: 5px; border-radius: 50%; background: #22c55e; flex-shrink: 0; }
 
+@media (max-width: 700px) {
+  .cta-wrapper { grid-template-columns: 1fr; }
+  .cta-left, .cta-right { padding: 40px 32px; }
+}
 .location-section {
   padding: 6rem 0;
   background: linear-gradient(to right, #f4f7fb 50%, #eef3f8 50%);

@@ -1,8 +1,8 @@
-import type { PageKey } from '../types'
+import type { PageKey } from '../types';
 
 type ArticleProps = {
-  onNavigate: (page: PageKey) => void
-}
+  onNavigate: (page: PageKey) => void;
+};
 
 export default function NewsArticle5({ onNavigate }: ArticleProps) {
   return (
@@ -26,21 +26,26 @@ export default function NewsArticle5({ onNavigate }: ArticleProps) {
                 <span className="news-read">⏱ 3 min read</span>
               </div>
               <p>
-                Golden Stone launched a new real-time tracking dashboard for enterprise customers that delivers live visibility into cargo positions, estimated arrival times, and automated alerts. This digital platform empowers logistics managers
-                with actionable shipment intelligence.
+                Golden Stone launched a new real-time tracking dashboard for enterprise customers
+                that delivers live visibility into cargo positions, estimated arrival times, and
+                automated alerts. This digital platform empowers logistics managers with actionable
+                shipment intelligence.
               </p>
               <p>
-                The dashboard integrates with the company’s internal operations and external carrier feeds, delivering consolidated status updates for rail, air, and ocean freight. Clients can now quickly identify delays, route changes,
-                and customs milestones through a single interface.
+                The dashboard integrates with the company’s internal operations and external carrier
+                feeds, delivering consolidated status updates for rail, air, and ocean freight.
+                Clients can now quickly identify delays, route changes, and customs milestones
+                through a single interface.
               </p>
               <p>
-                The new service is aimed at large manufacturers and retailers who need consistent, transparent freight performance. Golden Stone says the technology will reduce manual tracking work and support faster responses to
-                inbound logistics challenges.
+                The new service is aimed at large manufacturers and retailers who need consistent,
+                transparent freight performance. Golden Stone says the technology will reduce manual
+                tracking work and support faster responses to inbound logistics challenges.
               </p>
             </div>
           </article>
         </div>
       </section>
     </div>
-  )
+  );
 }

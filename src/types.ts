@@ -10,4 +10,4 @@ export type PageKey =
   | 'news-article-3'
   | 'news-article-4'
   | 'news-article-5'
-  | 'news-article-6'
+  | 'news-article-6';

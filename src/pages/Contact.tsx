@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import './Contact.css'
+import { useState } from 'react';
+import './Contact.css';
 
 const faqs = [
   {
@@ -26,47 +26,56 @@ const faqs = [
     q: 'What payment methods do you accept?',
     a: 'We accept mobile money (MTN MoMo, Vodafone Cash, AirtelTigo), bank transfer, and major credit/debit cards. Corporate accounts can be invoiced monthly.',
   },
-]
+];
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false)
-  const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
+  const [submitted, setSubmitted] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setSubmitted(true)
+    e.preventDefault();
+    setSubmitted(true);
     setTimeout(() => {
-      setSubmitted(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
-  }
+      setSubmitted(false);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    }, 3000);
+  };
 
-  const toggleFaq = (i: number) => setOpenFaq(openFaq === i ? null : i)
+  const toggleFaq = (i: number) => setOpenFaq(openFaq === i ? null : i);
 
   return (
     <div className="contact-page">
-
       {/* ── HERO ── */}
       <section className="ct-hero">
         <div className="ct-hero-bg" />
         <div className="ct-hero-overlay" />
         <div className="container ct-hero-content slide-in-right">
           <span className="ct-eyebrow">Contact Us</span>
-          <h1>Let's move<br /><em>something great.</em></h1>
-          <p>Send a request, ask about custom services, or discuss your delivery needs with our premium operations team.</p>
+          <h1>
+            Let's move
+            <br />
+            <em>something great.</em>
+          </h1>
+          <p>
+            Send a request, ask about custom services, or discuss your delivery needs with our
+            premium operations team.
+          </p>
         </div>
       </section>
 
       {/* ── CONTACT LAYOUT ── */}
       <section className="ct-section">
         <div className="container ct-layout">
-
           {/* FORM */}
           <div className="ct-form-card slide-in-left">
             <div className="ct-form-header">
               <span className="ct-pill">Send a Message</span>
-              <h2>We respond within<br />24 hours.</h2>
+              <h2>
+                We respond within
+                <br />
+                24 hours.
+              </h2>
             </div>
 
             <form onSubmit={handleSubmit} className="ct-form">
@@ -78,7 +87,7 @@ export default function Contact() {
                     placeholder="Your full name"
                     required
                     value={formData.name}
-                    onChange={e => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div className="ct-field">
@@ -88,7 +97,7 @@ export default function Contact() {
                     placeholder="you@example.com"
                     required
                     value={formData.email}
-                    onChange={e => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
               </div>
@@ -100,7 +109,7 @@ export default function Contact() {
                   placeholder="e.g. Express freight quote"
                   required
                   value={formData.subject}
-                  onChange={e => setFormData({ ...formData, subject: e.target.value })}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                 />
               </div>
 
@@ -111,7 +120,7 @@ export default function Contact() {
                   placeholder="Tell us about your shipment or enquiry…"
                   required
                   value={formData.message}
-                  onChange={e => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
               </div>
 
@@ -166,9 +175,30 @@ export default function Contact() {
             <div className="ct-social">
               <p className="ct-info-label">Follow us</p>
               <div className="ct-social-links">
-                <a href="https://www.facebook.com/goldenstone.logistic?mibextid=rS40aB7S9Ucbxw6v" className="ct-social-btn" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://www.instagram.com/goldenstone_logisticsgh?igsh=MXgzbWRkeTV6djhxaw==" className="ct-social-btn" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://www.tiktok.com/@golden.stone.logistics?_r=1&_t=ZS-967kaHxUbrA" className="ct-social-btn" target="_blank" rel="noopener noreferrer">Tiktok</a>
+                <a
+                  href="https://www.facebook.com/goldenstone.logistic?mibextid=rS40aB7S9Ucbxw6v"
+                  className="ct-social-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/goldenstone_logisticsgh?igsh=MXgzbWRkeTV6djhxaw=="
+                  className="ct-social-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://www.tiktok.com/@golden.stone.logistics?_r=1&_t=ZS-967kaHxUbrA"
+                  className="ct-social-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tiktok
+                </a>
               </div>
             </div>
 
@@ -185,7 +215,11 @@ export default function Contact() {
         <div className="container">
           <div className="ct-faq-header slide-in-left">
             <span className="ct-pill">FAQ</span>
-            <h2>Frequently asked<br />questions.</h2>
+            <h2>
+              Frequently asked
+              <br />
+              questions.
+            </h2>
             <p>Everything you need to know about our logistics services.</p>
           </div>
 
@@ -208,7 +242,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
     </div>
-  )
+  );
 }
