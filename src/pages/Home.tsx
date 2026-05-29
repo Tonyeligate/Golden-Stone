@@ -551,14 +551,14 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
           <div className="loc-detail-icon"><ClockIcon size={15} /></div>
           <div>
             <span className="loc-detail-label">Working Hours</span>
-            <span className="loc-detail-value">Mon – Sat, 8:00am – 5:00pm</span>
+            <span className="loc-detail-value">Mon – Fri, 8:40am – 5:00pm<p>Sat, 8:40am – 2:00pm</p></span>
           </div>
         </div>
         <div className="loc-detail-item">
           <div className="loc-detail-icon"><PhoneIcon size={15} /></div>
           <div>
             <span className="loc-detail-label">Phone</span>
-            <span className="loc-detail-value">+233 536 381 700</span>
+            <span className="loc-detail-value">+233 536 381 700 / +233 502 609 </span>
           </div>
         </div>
       </div>
