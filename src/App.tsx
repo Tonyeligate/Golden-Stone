@@ -146,7 +146,7 @@ function App() {
             </p>
             <div className="footer-contact-info">
               <p>5th Avenue, Tema Community 11</p>
-              <p>+233 536 381 700</p>
+              <p>+233 536 381 700 / +233 502 609 222</p>
               <p>goldenstonelogistics@gmail.com</p>
             </div>
           </div>

@@ -146,7 +146,7 @@ export default function Contact() {
                 <div className="ct-info-icon">📞</div>
                 <div>
                   <p className="ct-info-label">Phone</p>
-                  <p className="ct-info-value">+233 536 381 700</p>
+                  <p className="ct-info-value">+233 536 381 700 / +233 502 609 222</p>
                 </div>
               </div>
               <div className="ct-info-item">
@@ -167,7 +167,7 @@ export default function Contact() {
                 <div className="ct-info-icon">🕐</div>
                 <div>
                   <p className="ct-info-label">Office Hours</p>
-                  <p className="ct-info-value">Mon – Sat, 8:45 AM – 5 PM GMT</p>
+                  <p className="ct-info-value">Mon – Fri, 8:45 AM – 5 PM <p>Sat, 8:45 AM – 2:00 PM</p></p>
                 </div>
               </div>
             </div>

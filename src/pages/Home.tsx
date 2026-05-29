@@ -558,7 +558,7 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
           <div className="loc-detail-icon"><PhoneIcon size={15} /></div>
           <div>
             <span className="loc-detail-label">Phone</span>
-            <span className="loc-detail-value">+233 536 381 700 / +233 502 609 </span>
+            <span className="loc-detail-value">+233 536 381 700 / +233 502 609 222 </span>
           </div>
         </div>
       </div>
