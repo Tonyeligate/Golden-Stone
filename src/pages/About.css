@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Sora:wght@300;400;500;600&display=swap');
-
 /* ── BASE ── */
 .about-page {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-sans);
   background: #f5f7fa;
   color: #111;
 }
@@ -68,7 +66,7 @@
 }
 
 .ab-hero-content h1 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(3.5rem, 8vw, 7rem);
   font-weight: 700;
   color: #fff;
@@ -115,7 +113,7 @@
 .ab-stat:last-child { border-right: none; }
 
 .ab-stat strong {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: 700;
   color: #e07b2e;
@@ -149,7 +147,7 @@
 }
 
 .ab-section-tag h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 700;
   color: #060e23;
@@ -194,7 +192,7 @@
 }
 
 .ab-story-left h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.2rem, 3.5vw, 3rem);
   font-weight: 700;
   color: #060e23;
@@ -230,7 +228,7 @@
 }
 
 .ab-pull-quote p {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   font-style: italic;
   color: #060e23 !important;
@@ -270,7 +268,7 @@
 }
 
 .ab-img-badge strong { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.8; }
-.ab-img-badge span { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; line-height: 1; }
+.ab-img-badge span { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; line-height: 1; }
 
 .ab-info-cards {
   display: flex;
@@ -404,6 +402,8 @@
   font-size: 0.82rem;
 }
 
+
+
 /* Responsive */
 @media (max-width: 900px) {
   .ab-awards-grid {
@@ -430,7 +430,7 @@
 }
 
 .ab-identity-header h2 {
-  font-family: 'poppins', sans-serif;
+  font-family: var(--font-sans);
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
   font-weight: 800;
   color: #f96e03;
@@ -486,7 +486,7 @@
 .ab-id-values  .ab-id-icon i { color: #b41e1e; font-size: 24px; }
 
 .ab-id-card h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 1.3rem;
   font-weight: 800;
   color: #0a0202;
@@ -831,7 +831,7 @@
 }
 
 .ab-section-tag h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2rem, 3.5vw, 3rem);
   color: #2d0101;
   line-height: 1.15;
@@ -1025,5 +1025,156 @@
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   DRIVERS TEAM SECTION
+═══════════════════════════════════════════════ */
+.drivers-section {
+  background: #f0f4fa;
+  padding: 6rem 20px;
+}
+
+.drivers-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.drivers-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.drivers-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e07b2e;
+  margin-bottom: 0.5rem;
+}
+
+.drivers-title {
+  font-size: clamp(2.4rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #1a2d5a;
+  margin: 0 0 0.75rem;
+  line-height: 1.1;
+}
+
+.drivers-title-accent {
+  width: 52px;
+  height: 3px;
+  background: #e07b2e;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+.drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+/* Base card */
+.driver-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 46px 34px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #e8ecf4;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.driver-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.1);
+}
+
+/* Featured (center) card */
+.driver-card--featured {
+  padding: 0 34px 40px;
+  border: none;
+  box-shadow: 0 12px 40px rgba(26, 77, 214, 0.14);
+  transform: translateY(-12px);
+}
+
+.driver-card--featured:hover {
+  transform: translateY(-18px);
+}
+
+/* Blue banner at top of featured card */
+.driver-blue-banner {
+  width: calc(100% + 68px);
+  height: 140px;
+  background: #c25f03;
+  border-radius: 22px 22px 0 0;
+  margin-bottom: -75px;
+  flex-shrink: 0;
+}
+
+/* Avatar */
+.driver-avatar-wrap {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #d4b87a;
+  background: #eee;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 26px;
+  flex-shrink: 0;
+}
+
+.driver-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.driver-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a2d5a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.driver-role {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #e07b2e;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .drivers-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .driver-card--featured {
+    transform: translateY(0);
+  }
+
+  .driver-card--featured:hover {
+    transform: translateY(-6px);
+  }
+
+  .driver-blue-banner {
+    width: calc(100% + 56px);
   }
 }

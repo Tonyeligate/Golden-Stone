@@ -8,6 +8,7 @@ import heroImg2 from '../images/img2.png'; // woman holding packages
 import heroImg3 from '../images/img3.png'; // woman at desk with screen
 import heroImg4 from '../images/img4.png'; // woman with laptop alt
 import aboutPersonImage from '../images/first.png'; // replace with your actual image filename
+import aboutPersonImage2 from '../images/hr.jpeg'; // replace with your actual image filename
 import {
   Rocket as RocketIcon,
   Zap as ZapIcon,
@@ -465,6 +466,34 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
           </div>
         </div>
       </section>
+
+<section className="biz-solutions-section">
+  <div className="container biz-solutions-grid">
+    <div className="biz-solutions-image slide-in-left">
+      <img src={aboutPersonImage2} alt="Business professional at desk" />
+    </div>
+    <div className="biz-solutions-content slide-in-right">
+      <span className="biz-solutions-eyebrow">The HR</span>
+      <h2 className="biz-solutions-title">Business Solutions</h2>
+      <div className="biz-solutions-divider" />
+      <p className="biz-solutions-text">
+        Our range of services to help your business includes reliable dedicated delivery to ensure
+        your products reach their destination on time, customized Contract EMS for tailored
+        emergency management solutions that meet your unique needs, and fast-tracked Priority
+        Services designed to keep your critical operations running smoothly. We're committed to
+        supporting your business with efficient and dependable solutions.
+      </p>
+      <button
+        className="biz-solutions-btn"
+        type="button"
+        onClick={() => onNavigate?.('services')}
+      >
+        Learn More <span className="biz-solutions-arrow">→</span>
+      </button>
+    </div>
+  </div>
+</section>
+
       <section className="cta-modern">
         <div className="cta-wrapper">
           <div className="cta-left">

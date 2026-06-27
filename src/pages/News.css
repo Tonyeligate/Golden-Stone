@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;1,700&family=Outfit:wght@300;400;500;600&display=swap');
-
 .news-page {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-sans);
   background: #f7f8fc;
   color: #111;
 }
@@ -61,7 +59,7 @@
 }
 
 .news-hero-content h1 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.6rem, 5.5vw, 4.5rem);
   color: #fff;
   line-height: 1.1;
@@ -154,7 +152,7 @@
 }
 
 .featured-body h2 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-serif);
   font-size: 1.7rem;
   color: #0a1228;
   line-height: 1.25;
@@ -183,7 +181,7 @@
   border: none;
   border-radius: 999px;
   padding: 0.75rem 1.75rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
@@ -211,7 +209,7 @@
 }
 
 .news-filter-bar h3 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-serif);
   font-size: 1.4rem;
   color: #f2860a;
   margin: 0;
@@ -227,7 +225,7 @@
   border: 1px solid #dde3f0;
   background: #fff;
   color: #556;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.82rem;
   font-weight: 500;
   padding: 0.4rem 1rem;
@@ -261,7 +259,7 @@
   border: none;
   border-radius: 999px;
   padding: 0.85rem 1.5rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.92rem;
   font-weight: 700;
   cursor: pointer;
@@ -364,7 +362,7 @@
 }
 
 .news-card-body h3 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-serif);
   font-size: 1.05rem;
   color: #0a1228;
   line-height: 1.35;
@@ -424,7 +422,7 @@
 }
 
 .news-article-body h1 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   margin: 0;
   color: #0a1228;
@@ -636,7 +634,7 @@
 }
 
 .modal-body h2 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-serif);
   font-size: 1.8rem;
   color: #0a1228;
   line-height: 1.2;
@@ -657,7 +655,7 @@
   border: 1px solid #d8dce7;
   border-radius: 16px;
   padding: 0.95rem 1rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.95rem;
   color: #111;
   background: #fff;

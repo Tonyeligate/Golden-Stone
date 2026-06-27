@@ -1,7 +1,7 @@
 
 
 .sv-page {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--font-sans);
   background: #f5f7fa;
   color: #111;
 }
@@ -68,7 +68,7 @@
 }
 
 .sv-hero-content h1 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(3.2rem, 7vw, 6.5rem);
   font-weight: 700;
   color: #fff;
@@ -115,7 +115,7 @@
 .sv-highlight:last-child { border-right: none; }
 
 .sv-highlight strong {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: 700;
   color: #e07b2e;
@@ -158,7 +158,7 @@
 }
 
 .sv-grid-header h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 700;
   color: #060e23;
@@ -218,7 +218,7 @@
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 3.5rem;
   font-weight: 700;
   color: rgba(255,255,255,0.18);
@@ -259,7 +259,7 @@
 }
 
 .sv-card-body h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 1.35rem;
   font-weight: 700;
   color: #060e23;
@@ -377,7 +377,7 @@
 
 /* ── Typography ── */
 .sv-strip-headline {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.6rem, 6vw, 5rem);
   font-weight: 800;
   color: #fff;
@@ -469,7 +469,7 @@
 .sv-process-header { margin-bottom: 3.5rem; }
 
 .sv-process-header h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 700;
   color: #060e23;
@@ -523,7 +523,7 @@
 .sv-step-icon-wrap i { font-size: 28px; color: #e07b2e; }
 
 .sv-step-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: .7rem;
   font-weight: 700;
   color: rgba(224,123,46,.5);

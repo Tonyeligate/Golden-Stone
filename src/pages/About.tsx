@@ -1,5 +1,8 @@
-﻿import { useState, useEffect } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import headerLogo from '../images/header.png';
+import driverImg1 from '../images/driver1.jpeg';
+import driverImg2 from '../images/driver2.jpeg';
+import driverImg3 from '../images/driver3.jpeg';
 import './About.css';
 
 const milestones = [
@@ -116,6 +119,27 @@ const awards = [
   },
 ];
 
+const drivers = [
+  {
+    name: 'Driver Name Here',
+    role: 'Senior Driver',
+    image: driverImg1, // import your driver images at the top
+    featured: false,
+  },
+  {
+    name: 'Isaac Manfo',
+    role: 'Lead Driver',
+    image: driverImg2,
+    featured: true, // center card gets the blue highlight
+  },
+  {
+    name: 'Paul Nkornu',
+    role: 'Dispatch Driver',
+    image: driverImg3,
+    featured: false,
+  },
+];
+
 function TestimonialsSlider() {
   const [current, setCurrent] = useState(0);
   const total = testimonials.length;
@@ -128,7 +152,27 @@ function TestimonialsSlider() {
   const prev = () => setCurrent((p) => (p - 1 + total) % total);
   const next = () => setCurrent((p) => (p + 1) % total);
   const visible = [0, 1, 2].map((offset) => testimonials[(current + offset) % total]);
+const gridRef = useRef<HTMLDivElement>(null);
 
+useEffect(() => {
+  const grid = gridRef.current;
+  if (!grid) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        grid.querySelectorAll<HTMLDivElement>('.ab-award-card').forEach((card) => {
+          card.classList.add('animate');
+        });
+        observer.disconnect(); // fire once
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(grid);
+  return () => observer.disconnect();
+}, []);
   return (
     <section className="ab-testimonials">
       <div className="container">
@@ -414,6 +458,28 @@ export default function About() {
           </div>
         </div>
       </section>
+
+<section className="drivers-section">
+  <div className="drivers-container">
+    <div className="drivers-header">
+      <span className="drivers-eyebrow">Our Team</span>
+      <h2 className="drivers-title">Our Drivers</h2>
+      <div className="drivers-title-accent" />
+    </div>
+    <div className="drivers-grid">
+      {drivers.map((driver, i) => (
+        <div key={i} className={`driver-card ${driver.featured ? 'driver-card--featured' : ''}`}>
+          {driver.featured && <div className="driver-blue-banner" />}
+          <div className="driver-avatar-wrap">
+            <img src={driver.image} alt={driver.name} className="driver-avatar" />
+          </div>
+          <h3 className="driver-name">{driver.name}</h3>
+          <span className="driver-role">{driver.role}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       <TestimonialsSlider />
     </div>
