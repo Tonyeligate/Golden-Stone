@@ -3,6 +3,13 @@ import headerLogo from '../images/header.png';
 import driverImg1 from '../images/driver1.jpeg';
 import driverImg2 from '../images/driver2.jpeg';
 import driverImg3 from '../images/driver3.jpeg';
+import member1 from '../images/member1.jpeg';
+import member2 from '../images/member2.jpeg';
+import member3 from '../images/member3.jpeg';
+import member4 from '../images/member4.jpeg';
+import member5 from '../images/member5.jpeg';
+import member6 from '../images/member6.jpeg';
+import member7 from '../images/member7.jpeg';
 import './About.css';
 
 const milestones = [
@@ -121,7 +128,7 @@ const awards = [
 
 const drivers = [
   {
-    name: 'Driver Name Here',
+    name: 'Samuel Esiaku',
     role: 'Senior Driver',
     image: driverImg1, // import your driver images at the top
     featured: false,
@@ -138,6 +145,16 @@ const drivers = [
     image: driverImg3,
     featured: false,
   },
+];
+
+const operatingTeam = [
+  { name: 'William Annor', role: 'Clearance Department (Operations)', image: member1, linkedin: '#' },
+  { name: 'Benjamin', role: 'Assistant Warehouse Supervisor (Operations)', image: member2, linkedin: '#' },
+  { name: 'Eugenia Betty Eshun', role: 'Operations Team Member', image: member3, linkedin: '#' },
+  { name: 'Michael Sampson', role: 'Operations Team Member Air Department', image: member4, linkedin: '#' },
+  { name: 'Joshua Okyere', role: 'Operations Team Member', image: member5, linkedin: '#' },
+  { name: 'Patrichia Ampadu', role: 'Marketer', image: member6, linkedin: '#' },
+  { name: 'Melody Nwamana', role: 'Marketer', image: member7, linkedin: '#' },
 ];
 
 function TestimonialsSlider() {
@@ -426,6 +443,30 @@ export default function About() {
           </div>
         </div>
       </section>
+
+
+<section className="mot-section">
+  <div className="mot-header">
+    <h2 className="mot-title">Meet the <span>Operating Team</span></h2>
+    <p className="mot-sub">Our dedicated team driving excellence and reliable service.</p>
+  </div>
+  <div className="mot-grid">
+    {operatingTeam.map((m, i) => (
+      <div className="mot-card" key={i}>
+        <div className="mot-img-ring">
+          <div className="mot-img-inner">
+            <img src={m.image} alt={m.name} />
+          </div>
+        </div>
+        <h3 className="mot-name">{m.name}</h3>
+        <span className="mot-role">{m.role}</span>
+        <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="mot-li-btn" aria-label={`${m.name} LinkedIn`}>
+          <i className="ti ti-brand-linkedin" aria-hidden="true" />
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* ── MILESTONES ── */}
       <section className="ab-milestones">

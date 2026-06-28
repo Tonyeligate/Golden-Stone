@@ -165,10 +165,10 @@ function App() {
             <div className="footer-column">
               <h4>Services</h4>
               <button type="button" onClick={() => handleNavigate('services')}>
-                Express Freight
+                Air Freight
               </button>
               <button type="button" onClick={() => handleNavigate('services')}>
-                Air Cargo
+                Custom Clearance
               </button>
               <button type="button" onClick={() => handleNavigate('services')}>
                 Sea Freight

@@ -9,6 +9,8 @@ import heroImg3 from '../images/img3.png'; // woman at desk with screen
 import heroImg4 from '../images/img4.png'; // woman with laptop alt
 import aboutPersonImage from '../images/first.png'; // replace with your actual image filename
 import aboutPersonImage2 from '../images/hr.jpeg'; // replace with your actual image filename
+import founderImg1 from '../images/founder1.jpeg';
+import founderImg2 from '../images/founder2.jpeg';
 import {
   Rocket as RocketIcon,
   Zap as ZapIcon,
@@ -321,7 +323,7 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
       <section className="about-preview-section">
         <div className="container about-preview-grid">
           <div className="about-preview-image slide-in-left">
-            <img src={aboutPersonImage} alt="L'AINE HR professional at desk" />
+            <img src={aboutPersonImage} alt="Golden Stone professional at desk" />
           </div>
           <div className="about-preview-content slide-in-right">
             <h2 className="about-preview-title">
@@ -434,6 +436,60 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
           </div>
         </div>
       </section>
+
+      <section className="mtt-section">
+  <div className="mtt-inner">
+    <div className="mtt-header">
+      <p className="mtt-eyebrow">The People Behind the Brand</p>
+      <h2 className="mtt-title">Meet Our Founders</h2>
+      <p className="mtt-sub">Visionary leaders with decades of hands-on logistics expertise, building the future of freight in Ghana and beyond.</p>
+    </div>
+
+    <div className="mtt-grid">
+
+      <div className="mtt-card">
+        <div className="mtt-photo-ring">
+          <div className="mtt-photo-inner">
+            <img src={founderImg1} alt="Founder & CEO" />
+          </div>
+        </div>
+        <div className="mtt-card-body">
+          <h3 className="mtt-name">Akua Zhang Jie</h3>
+          <span className="mtt-role-badge">Founder &amp; Managing Director</span>
+          <div className="mtt-divider" />
+          <p className="mtt-bio">
+            With over 3 years in freight and supply chain management, they lead Golden Stone's vision of precision logistics across West Africa.
+          </p>
+          <a href="#" className="mtt-li-btn" aria-label="LinkedIn">
+            <i className="ti ti-brand-linkedin" aria-hidden="true" />
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div className="mtt-card">
+        <div className="mtt-photo-ring mtt-ring-gold">
+          <div className="mtt-photo-inner">
+            <img src={founderImg2} alt="Founder & COO" />
+          </div>
+        </div>
+        <div className="mtt-card-body">
+          <h3 className="mtt-name">SanSan YunJiguoji Mosansan</h3>
+          <span className="mtt-role-badge">Founder &amp; Chief Executive Officer</span>
+          <div className="mtt-divider" />
+          <p className="mtt-bio">
+            A seasoned operations expert, they oversee Golden Stone's nationwide delivery network, ensuring every shipment moves with speed and care.
+          </p>
+          <a href="#" className="mtt-li-btn" aria-label="LinkedIn">
+            <i className="ti ti-brand-linkedin" aria-hidden="true" />
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <section className="why-choose">
         <div className="container">
