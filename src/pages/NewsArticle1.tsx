@@ -23,7 +23,7 @@ export default function NewsArticle1({ onNavigate }: ArticleProps) {
               <h1>Golden Stone Logistics expands regional coverage across Ghana</h1>
               <div className="news-meta news-meta--spaced">
                 <span className="news-date">📅 May 12, 2026</span>
-                <span className="news-read">⏱ 4 min read</span>
+                <span className="news-read">⏱ </span>
               </div>
               <p>
                 Golden Stone Logistics has broadened its delivery network across six new regions in

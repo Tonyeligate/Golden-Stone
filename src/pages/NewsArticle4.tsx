@@ -23,7 +23,7 @@ export default function NewsArticle4({ onNavigate }: ArticleProps) {
               <h1>Africa logistics sector poised for record growth in 2026</h1>
               <div className="news-meta news-meta--spaced">
                 <span className="news-date">📅 March 3, 2026</span>
-                <span className="news-read">⏱ 5 min read</span>
+                <span className="news-read">⏱ </span>
               </div>
               <p>
                 Analysts predict a 28% surge in cross-border freight demand across Africa as AfCFTA

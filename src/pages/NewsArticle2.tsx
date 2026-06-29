@@ -23,7 +23,7 @@ export default function NewsArticle2({ onNavigate }: ArticleProps) {
               <h1>New international partnership launched with Maersk Line</h1>
               <div className="news-meta news-meta--spaced">
                 <span className="news-date">📅 April 28, 2026</span>
-                <span className="news-read">⏱ 3 min read</span>
+                <span className="news-read">⏱ </span>
               </div>
               <p>
                 Golden Stone Logistics has entered a strategic international partnership with Maersk

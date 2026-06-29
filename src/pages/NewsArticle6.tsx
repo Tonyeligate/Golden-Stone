@@ -23,7 +23,7 @@ export default function NewsArticle6({ onNavigate }: ArticleProps) {
               <h1>Golden Stone joins West Africa Freight Alliance</h1>
               <div className="news-meta news-meta--spaced">
                 <span className="news-date">📅 February 5, 2026</span>
-                <span className="news-read">⏱ 3 min read</span>
+                <span className="news-read">⏱ </span>
               </div>
               <p>
                 Golden Stone Logistics became a member of the West Africa Freight Alliance to

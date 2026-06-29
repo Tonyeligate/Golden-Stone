@@ -59,7 +59,7 @@ const milestones = [
 
 const testimonials = [
   {
-    name: 'Miss Nana Akua Gyimah Dankwah',
+    name: 'Nana Osei',
     role: 'HR Manager',
     quote:
       'Golden Stone Logistics Limited Company has transformed how deliveries are handled. Fast, reliable and their tracking system is excellent.',
@@ -129,19 +129,19 @@ const awards = [
 const drivers = [
   {
     name: 'Samuel Esiaku',
-    role: 'Senior Driver',
+    role: 'Driver',
     image: driverImg1, // import your driver images at the top
     featured: false,
   },
   {
     name: 'Isaac Manfo',
-    role: 'Lead Driver',
+    role: 'Driver',
     image: driverImg2,
     featured: true, // center card gets the blue highlight
   },
   {
     name: 'Paul Nkornu',
-    role: 'Dispatch Driver',
+    role: 'Driver',
     image: driverImg3,
     featured: false,
   },
@@ -447,7 +447,7 @@ export default function About() {
 
 <section className="mot-section">
   <div className="mot-header">
-    <h2 className="mot-title">Meet the <span>Operating Team</span></h2>
+    <h2 className="mot-title">Meet the Operating And Marketing Team</h2>
     <p className="mot-sub">Our dedicated team driving excellence and reliable service.</p>
   </div>
   <div className="mot-grid">

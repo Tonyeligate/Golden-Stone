@@ -29,7 +29,7 @@ const defaultPosts: Post[] = [
     featured: true,
     image:
       'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=900&q=80',
-    readTime: '4 min read',
+    readTime: '',
   },
   {
     id: 'post-2',
@@ -41,7 +41,7 @@ const defaultPosts: Post[] = [
     featured: false,
     image:
       'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80',
-    readTime: '3 min read',
+    readTime: '',
   },
   {
     id: 'post-3',
@@ -53,7 +53,7 @@ const defaultPosts: Post[] = [
     featured: false,
     image:
       'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=80',
-    readTime: '2 min read',
+    readTime: '',
   },
   {
     id: 'post-4',
@@ -64,7 +64,7 @@ const defaultPosts: Post[] = [
     category: 'Industry',
     featured: false,
     image: growthImage,
-    readTime: '5 min read',
+    readTime: '',
   },
   {
     id: 'post-5',
@@ -76,7 +76,7 @@ const defaultPosts: Post[] = [
     featured: false,
     image:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
-    readTime: '3 min read',
+    readTime: '',
   },
   {
     id: 'post-6',
@@ -88,7 +88,7 @@ const defaultPosts: Post[] = [
     featured: false,
     image:
       'https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=600&q=80',
-    readTime: '3 min read',
+    readTime: '',
   },
 ];
 

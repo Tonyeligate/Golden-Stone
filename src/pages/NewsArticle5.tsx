@@ -23,7 +23,7 @@ export default function NewsArticle5({ onNavigate }: ArticleProps) {
               <h1>Real-time cargo tracking dashboard launched for enterprise clients</h1>
               <div className="news-meta news-meta--spaced">
                 <span className="news-date">📅 February 20, 2026</span>
-                <span className="news-read">⏱ 3 min read</span>
+                <span className="news-read">⏱</span>
               </div>
               <p>
                 Golden Stone launched a new real-time tracking dashboard for enterprise customers

@@ -533,7 +533,7 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
       <h2 className="biz-solutions-title">Business Solutions</h2>
       <div className="biz-solutions-divider" />
       <p className="biz-solutions-text">
-        Our range of services to help your business includes reliable dedicated delivery to ensure
+        Nana Akua Gyimah Dankwah the HR Manage of Golden Stone Logistics Limited Company. Our range of services to help your business includes reliable dedicated delivery to ensure
         your products reach their destination on time, customized Contract EMS for tailored
         emergency management solutions that meet your unique needs, and fast-tracked Priority
         Services designed to keep your critical operations running smoothly. We're committed to

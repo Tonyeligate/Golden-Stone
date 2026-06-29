@@ -23,7 +23,7 @@ export default function NewsArticle3({ onNavigate }: ArticleProps) {
               <h1>Premium warehousing services now available in Tema</h1>
               <div className="news-meta news-meta--spaced">
                 <span className="news-date">📅 March 15, 2026</span>
-                <span className="news-read">⏱ 2 min read</span>
+                <span className="news-read">⏱ </span>
               </div>
               <p>
                 Golden Stone Logistics launched a premium warehousing facility in Tema, serving
