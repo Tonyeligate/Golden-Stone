@@ -454,7 +454,7 @@ export default function Home({ onNavigate }: { onNavigate?: (page: PageName) => 
           </div>
         </div>
         <div className="mtt-card-body">
-          <h3 className="mtt-name">Akua Zhang Jie</h3>
+          <h3 className="mtt-name">Zhang Jie</h3>
           <span className="mtt-role-badge">Founder &amp; Managing Director</span>
           <div className="mtt-divider" />
           <p className="mtt-bio">
